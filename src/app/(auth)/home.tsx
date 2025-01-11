@@ -1,10 +1,10 @@
 'user client';
 import React from 'react'
 
-function page() {
+function home() {
   return (
-    <div>page</div>
+    <div>home</div>
   )
 }
 
-export default page
+export default home

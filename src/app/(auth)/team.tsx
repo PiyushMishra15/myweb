@@ -1,10 +1,10 @@
 'user client';
 import React from 'react'
 
-function page() {
+function team() {
   return (
-    <div>page</div>
+    <div>team</div>
   )
 }
 
-export default page
+export default team
