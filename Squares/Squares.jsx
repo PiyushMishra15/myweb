@@ -3,7 +3,7 @@
 	Installed from github/davidhdev/react-bits
 	13-1-2025
 */
-
+'use client'
 import { useRef, useEffect, useState } from 'react';
 
 const Squares = ({
