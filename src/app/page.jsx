@@ -36,7 +36,7 @@ export default function Page() {
           aspect of our work. With a blend of creativity, expertise,
           and dedication, we strive to exceed expectations and make a 
           meaningful impact in everything we do. Our diverse team brings
-          together a wealth of knowledge, skills, and perspectives, allowing
+          together a wealth of knowledge, skills, and perspectives, allowing.
         </p>
       </div>
     </div>
