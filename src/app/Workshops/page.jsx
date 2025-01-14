@@ -1,9 +1,9 @@
 import React from "react";
 import Head from "next/head";
+import DecryptedText from "../../../DecryptedText/DecryptedText";
 
 const Workshops = async () => {
   const workshops = [
-    // Current Workshops
     {
       id: 11,
       title: "INTRODUCTION TO BACKEND",
@@ -15,7 +15,6 @@ const Workshops = async () => {
       description:
         "This backend workshop is a training session focused on the development and maintenance of the server-side of software applications. This workshop typically covers topics such as backend technologies like Node.js, databases, API integration, security, and performance optimization. Participants learn how to create efficient and scalable backend systems to support frontend applications. By attending this backend workshop, developers can enhance their technical skills and stay up-to-date with the latest trends in backend development.",
     },
-    // Previous Workshops
     {
       id: 9,
       title: "BUG HUNTING WORKSHOP",
@@ -40,49 +39,80 @@ const Workshops = async () => {
     },
   ];
 
-  return (
-      <div className="container mx-auto py-8 px-4">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-bold text-center mb-8 font-[Syne Mono]">
-          Workshops
-        </h1>
-        {workshops.map((workshop) => (
-          <div
-            key={workshop.id}
-            className="flex flex-col md:flex-row-reverse items-center md:items-start gap-6 mb-8 border-b pb-6"
-          >
-            {/* Right Side: Image */}
-            <div className="w-full sm:w-3/4 md:w-1/3 md:mr-12">
-              <img
-                src={workshop.image_url}
-                alt={workshop.title}
-                className="w-full h-auto object-cover rounded-lg shadow-md"
-              />
-            </div>
+  // Group workshops by year
+  const groupedWorkshops = workshops.reduce((acc, workshop) => {
+    const year = new Date(workshop.start_date).getFullYear();
+    if (!acc[year]) acc[year] = [];
+    acc[year].push(workshop);
+    return acc;
+  }, {});
 
-            {/* Left Side: Title, Description, and Date */}
-            <div className="w-full sm:w-3/4 md:w-2/3">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold font-playfair text-gray-800 mb-4">
-                {workshop.title}
-              </h2>
-              <p className="text-lg sm:text-2xl md:text-3xl text-gray-700 mb-4 font-montserrat">
-                {workshop.description}
-              </p>
-              <p className="text-2xl sm:text-2xl md:text-4xl font-playair">
-                <span className="font-medium text-gray-800">Conducted on:</span>{" "}
-                <span className="text-blue-600">
-                  {new Date(workshop.start_date)
-                    .toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })
-                    .replace(/,/g, " ")}
-                </span>
-              </p>
-            </div>
+  const sortedYears = Object.keys(groupedWorkshops).sort((a, b) => b - a); // Sort by year descending
+
+  return (
+    <div className="bg-black text-white min-h-screen">
+      <div className="container mx-auto py-8 px-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-bold text-center mb-24">
+          <DecryptedText
+            text="Workshops"
+            speed={100}
+            maxIterations={20}
+            characters="ABCD1234!?"
+            className="revealed"
+            parentClassName="all-letters"
+            encryptedClassName="encrypted"
+          />
+        </h1>
+
+        {sortedYears.map((year, index) => (
+          <div key={year} className="mb-12">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-24 text-center">
+              {Number(year) - 1} - {year}
+            </h2>
+            {groupedWorkshops[year].map((workshop) => (
+              <div
+                key={workshop.id}
+                className="flex flex-col md:flex-row-reverse items-center md:items-start gap-6 mb-40"
+              >
+                {/* Right Side: Image */}
+                <div className="w-full sm:w-3/4 md:w-1/3 md:mr-12">
+                  <img
+                    src={workshop.image_url}
+                    alt={workshop.title}
+                    className="w-full h-auto object-cover rounded-lg shadow-md spotlight-card"
+                  />
+                </div>
+
+                {/* Left Side: Title, Description, and Date */}
+                <div className="w-full sm:w-3/4 md:w-2/3">
+                  <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold font-playfair text-gray-100 mb-4">
+                    {workshop.title}
+                  </h2>
+                  <p className="text-lg sm:text-2xl md:text-3xl text-gray-200 mb-4 font-montserrat md:w-2/3">
+                    {workshop.description}
+                  </p>
+                  <p className="text-2xl sm:text-2xl md:text-4xl font-playair">
+                    <span className="font-medium text-gray-300">Conducted on:</span>{" "}
+                    <span className="text-blue-300">
+                      {new Date(workshop.start_date)
+                        .toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })
+                        .replace(/,/g, " ")}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         ))}
+
+        {/* Horizontal line before footer */}
+        <hr className="border-t-2 border-gray-300 my-8" />
       </div>
+    </div>
   );
 };
 

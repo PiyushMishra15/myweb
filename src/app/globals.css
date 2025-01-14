@@ -71,3 +71,39 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Decay Card Animation */
+@keyframes decayCard {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.95) rotate(5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Spotlight Effect Animation */
+@keyframes spotlightCard {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+  }
+  100% {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Apply both animations on hover */
+.spotlight-card:hover {
+  animation: decayCard 0.5s ease-out, spotlightCard 0.5s ease-out forwards;
+}
+
