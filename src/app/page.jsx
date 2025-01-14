@@ -6,6 +6,7 @@ import Header from '../../src/components/Header'; // Import Header component
 
 export default function Page() {
   return (
+    <>
     <div className='relative min-h-screen bg-gray-900'>
       <Header /> {/* Add Header component */}
       <div className='absolute top-0 left-0 w-full h-full'>
@@ -39,6 +40,9 @@ export default function Page() {
           />
         </div>
       </div>
+      
     </div>
+   
+    </>
   );
 }
