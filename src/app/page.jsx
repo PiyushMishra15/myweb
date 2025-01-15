@@ -28,18 +28,17 @@ export default function Page() {
           />
         </div>
       </div>
-      <div className='relative z-10 text-white pt-20'> 
-        <div className='flex text-center text-orange-500 items-center justify-center font-extrabold text-4xl '>About Our Team</div>
-        <p className='flex  p-20 ml-60  font-semibold md:w-4/6 text-center text-2xl'>
-          We are a group of passionate individuals united by
-          a shared commitment to delivering excellence in every 
-          aspect of our work. With a blend of creativity, expertise,
-          and dedication, we strive to exceed expectations and make a 
-          meaningful impact in everything we do. Our diverse team brings
-          together a wealth of knowledge, skills, and perspectives, allowing.
-        </p>
-      </div>
-    </div>
+      <div className="relative z-10 text-white pt-20">
+  <div className="flex flex-col items-center text-center text-orange-500 font-extrabold text-4xl px-4">
+    About Our Team
+  </div>
+  <p className="flex flex-col p-4 md:p-10 font-semibold text-center text-lg md:text-2xl md:max-w-screen-md mx-auto">
+    We are a group of passionate individuals united by a shared commitment to delivering excellence in every aspect of our work. 
+    With a blend of creativity, expertise, and dedication, we strive to exceed expectations and make a meaningful impact in everything we do. 
+    Our diverse team brings together a wealth of knowledge, skills, and perspectives.
+  </p>
+</div>
+</div>
     </>
   );
 }
