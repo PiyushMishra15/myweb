@@ -99,6 +99,7 @@ export default function Navbar() {
               { href: "/Projects", label: "Projects" },
               { href: "/Workshops", label: "Workshops" },
               { href: "/Events", label: "Events" },
+              { href: "/Team", label: "Our Team" },
               { href: "/ContactUs", label: "Contact Us" },
               { href: "/Faqs", label: "FAQs" },
             ].map((link) => (
