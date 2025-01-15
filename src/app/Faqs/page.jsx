@@ -16,16 +16,19 @@ export default function App() {
   const toggleCollapse5 = () => setCollapse5(!collapse5);
 
   return (
-    <div className="relative min-h-screen bg-black text-white py-10 px-4">
+    <>
+    <div className="relative min-h-screen  text-white py-10 px-4 ">
+
       {/* Background Squares */}
       <div
         style={{
-          position: "absolute",
+          position: "absolute", 
           top: 0,
           left: 0,
-          width: "100%",
+          width: "100vw",
           height: "100%",
-          zIndex: -1, // Ensures background doesn't cover other content
+          backgroundColor: "#000",
+          zIndex: "-1",
         }}
       >
         <Squares
@@ -38,7 +41,7 @@ export default function App() {
       </div>
 
       {/* FAQ Content */}
-      <div className="container mx-auto mt-5 px-4 relative z-10">
+      <div className="container mx-auto mt-10 px-4 relative z-10  ">
         <div className="bg-gray-800 shadow-md rounded-lg p-6">
           <h2 className="text-3xl font-bold text-center mb-6">FAQs</h2>
 
@@ -140,6 +143,6 @@ export default function App() {
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 }

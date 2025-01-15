@@ -4,7 +4,7 @@
 
 import React, { useState } from "react";
 import { useToast } from "@/hooks/use-toast"
-
+import Squares from "../../../Squares/Squares";
 
 export default function ContactUs() {
   const { toast } = useToast()
@@ -34,9 +34,33 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col">
-       
-       <section className="flex-grow bg-black py-10 px-4">
+    <>
+    <div className=" text-white min-h-screen flex flex-col">
+      
+
+         <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100%",
+          backgroundColor: "#000",
+          zIndex: "-1",
+        }}
+      >
+        <Squares
+          speed={0.1}
+          squareSize={40}
+          direction="diagonal"
+          borderColor="#4b5563"
+          hoverFillColor="#222"
+        />
+      </div>
+
+        
+       <section className="flex-grow  py-10 px-4">
+    
         <div className="max-w-lg mx-auto">
           <h2 className="text-2xl font-semibold text-center text-white mb-6">
             Contact Us
@@ -112,6 +136,6 @@ export default function ContactUs() {
         </div>
       </section>
      
-    </div>
+    </div></>
   );
 }

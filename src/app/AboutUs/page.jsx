@@ -5,7 +5,9 @@ import Squares from "../../../Squares/Squares"; // Ensure you have the correct l
 
 const AboutUs = () => {
   return (
-    <div className="page-container text-white min-h-screen flex flex-col justify-center items-center text-center font-poppins relative">
+    <>
+   
+    <div className="page-container text-white min-h-screen flex flex-col justify-center  items-center text-center font-poppins relative">
       {/* Squares Background */}
       <div
         style={{
@@ -28,7 +30,7 @@ const AboutUs = () => {
       </div>
 
       {/* Header */}
-      <h2 className="text-[45px] mt-16 leading-tight font-aldrich font-semibold mb-6 md:mb-8">
+      <h2 className="text-[45px] mt-24 leading-tight font-aldrich font-semibold mb-6 md:mb-8">
         TEAM <span className="text-[#D29DFF]">.EXE</span>
       </h2>
       <hr className="w-16 border-b-2 border-[#D29DFF] mb-8 animate-pulse mx-auto" />
@@ -59,6 +61,7 @@ const AboutUs = () => {
         ></iframe>
       </div>
     </div>
+    </>
   );
 };
 
