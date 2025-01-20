@@ -12,9 +12,12 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
+				baloo: ['"Baloo Bhai 2"', 'cursive'],
+				swanky: ['"Fontdiner Swanky"', 'cursive'],
+				neucha: ['"Neucha"', 'cursive'],
 				playfair: ['"Playfair Display"', 'serif'],
-				montserrat: ['"Montserrat"', 'sans-serif'],
-				'syne-mono': ['"Syne Mono"', 'sans-serif'],
+				poppins: ['"Poppins"', 'sans-serif'],
+				syne: ['"Syne Mono"', 'monospace'],
 
 			},
 			colors: {
