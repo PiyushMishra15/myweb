@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+<<<<<<< HEAD
 
 :root {
   --foreground-rgb: 255, 255, 255;
@@ -190,4 +191,71 @@ body {
 /* Apply both animations on hover */
 .spotlight-card:hover {
   animation: decayCard 0.5s ease-out, spotlightCard 0.5s ease-out forwards;
+=======
+/* globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.coordinator-card {
+  width: 100%;
+  margin: 16px 0;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.coordinator-card:hover {
+  border-color: rgb(144 97 249); /* Purple border on hover */
+}
+
+.bg-dark-blue {
+  background-color: rgb(0, 0, 2);
+}
+
+.domain-card {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.gallery-container .group {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-container img {
+  transition: transform 0.5s, border 0.5s;
+}
+
+.gallery-container .group:hover img {
+  transform: scale(1.1);
+  border: 4px solid #6C2BD9; /* Purple border */
+}
+
+/* Previous styles */
+.gallery-container .group {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-container img {
+  transition: transform 0.5s, border 0.5s;
+}
+
+.gallery-container .group:hover img {
+  transform: scale(1.05);
+  border: 4px solid #6C2BD9; /* Purple border */
+}
+
+.coordinator-card {
+  width: 300px;
+  margin: 16px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.coordinator-card:hover {
+  border-color: rgb(144 97 249); /* Purple border on hover */
+>>>>>>> c2c5c15e60f9bb8873695c2989615a273fcf7a04
 }

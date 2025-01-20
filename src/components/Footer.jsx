@@ -18,18 +18,17 @@ export default function CompletePage() {
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {/* Logo Section */}
             <div className="flex flex-col items-center sm:items-start">
-              <Footer.Brand
-                src="/exe 1.png" // Ensure the logo path is correct
-                alt="Team.Exe Logo"
-                name="LOGO"
-                className="text-white"
-                style={{ height: "80px", width: "180px", objectFit: "contain" }}
-              />
-             
-              <p className="text-gray-400 pl-10 text-lg mt-4 ml-10 sm:ml-0  text-center ">
-                TEAM .EXE
-              </p>
-            </div>
+  <Footer.Brand
+    src="/exe 1.png" // Ensure the logo path is correct
+    alt="Team.Exe Logo"
+    name="LOGO"
+    className="text-white"
+    style={{ height: "80px", width: "180px", objectFit: "contain" }}
+  />
+  <p className="text-gray-400 lg:pl-10 text-lg mt-4 text-center sm:text-left">
+    TEAM .EXE
+  </p>
+</div>
 
             {/* Quick Links Section */}
             <div className="flex flex-col items-center sm:items-start">
@@ -63,8 +62,8 @@ export default function CompletePage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/Event" className="hover:underline text-gray-400 hover:text-white">
-                    Event
+                  <Link href="/Events" className="hover:underline text-gray-400 hover:text-white">
+                    Events
                   </Link>
                 </li>
                 <li>
