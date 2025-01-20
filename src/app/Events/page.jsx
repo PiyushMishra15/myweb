@@ -66,7 +66,7 @@ const Events = () => {
 
   return (
     <div
-      className="bg-[url('/6385146.jpg')] bg-cover bg-center text-white min-h-screen"
+      className="bg-[url('/6385146.jpg')] bg-cover bg-center text-white min-h-screen w-full overflow-x-hidden"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/6385146.jpg')`,
       }}
@@ -102,7 +102,7 @@ const Events = () => {
               <p className="text-lg sm:text-2xl md:text-3xl text-gray-200 mb-4 font-montserrat md:w-2/3 ">
                 {event.description}
               </p>
-              <p className="text-xl sm:text-xl md:text-3xl font-playair mb-4">
+              <p className="text-2xl sm:text-xl md:text-3xl font-playair mb-4">
                 <span className="font-medium text-gray-300">Date:</span>{" "}
                 <span className="text-blue-300">
                   {new Date(event.start_date)

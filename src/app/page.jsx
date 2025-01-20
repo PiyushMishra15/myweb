@@ -1,6 +1,4 @@
 import Squares from '../../Squares/Squares';
-import BlurText from '../../BlurText/BlurText';
-import DecryptedText from '../../DecryptedText/DecryptedText';
 import DomainCard from '../../src/components/DomainCard'; // Import DomainCard component
 import Gallery from '../../src/components/Gallery'; // Import Gallery component
 

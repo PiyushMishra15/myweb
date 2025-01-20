@@ -6,53 +6,39 @@ import "aos/dist/aos.css";
 const projects = [
   {
     id: 1,
-    title: "Kudos",
+    title: "Smart Solutions for Local Home Repair Services",
     description:
-      "A platform to enhance employee engagement, task management, and recognition, offering data-driven insights to improve workplace productivity and collaboration.",
-    techStack: [
-      "JavaScript",
-      "Spring Boot",
-      "PostgreSQL",
-      "Hibernate/JPA",
-    ],
+      "A platform connecting homeowners with trusted local repair experts, offering convenient booking, transparent pricing, and quality assurance for home repairs.",
+    techStack: ["Flutter", "Node.js", "MongoDB", "Firebase", "WebRTC"],
     thumbnailUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPADMudbjlBqRO_hh9cgP1bXlOHJPLrmIxnQ&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMn3prTTzcSRQ8NDFNWMRr8ndUszLXRPXfDQ&s",
   },
   {
     id: 2,
-    title: "Type Dash",
+    title: "Accident Alert and Detection System",
     description:
-      "A dynamic speed typing website that allows users to create and participate in real-time multiplayer typing matches. Users can challenge their friends in real-time typing competitions. The website provides a user-friendly interface where players can test their typing speed, accuracy, and improve their typing skills.",
-    techStack: ["HTML", "CSS", "JavaScript", "Node.js", "MongoDB"],
+      "A real-time car accident detection system using accelerometer, GPS, and GSM to alert emergency services and family, ensuring timely medical intervention and rescue.",
+    techStack: ["flutter", "Arduino", "Gsm Module", "Node js"],
     thumbnailUrl:
-      "https://res.cloudinary.com/dwwajleyo/image/upload/v1711746296/posters_and_assets/project_thumbnails/Screenshot_2024-03-30_023406_vxpmet.png",
+      "https://i.ytimg.com/vi/WNezQ0maD9I/maxresdefault.jpg",
   },
   {
     id: 3,
-    title: "Task Gambit",
+    title: "Unlocking Shared Parking Solutions for Urban Ease",
     description:
-      "Teams face a thrilling challenge navigating through hybrid puzzles blending virtual and physical elements. Solve these puzzles to qualify for further rounds, collaborate, and race against time for the ultimate victory!",
-    techStack: ["React.js", "Express.js", "Socket.io", "MongoDB", "Firebase"],
+      "A mobile app that connects drivers with homeowners renting out unused garages, addressing parking shortages and creating a community-driven solution.",
+    techStack: ["Flutter", "Node.js", "Stripe", "Firebase"],
     thumbnailUrl:
-      "https://tse3.mm.bing.net/th?id=OIP.CBVGzahuk61Z7PlcW05pKAAAAA&pid=Api&P=0&h=180",
+      "https://tse4.mm.bing.net/th?id=OIP.pe_TByBfmDPvL71MZW9swgHaE3&pid=Api&P=0&h=180",
   },
   {
     id: 4,
-    title: "Thrift",
+    title: "PARADOX",
     description:
-      "A platform connecting sellers and buyers for second-hand goods like books, appliances, and art. Features include secure communication, payment options, and a complaint desk to ensure safe transactions.",
-    techStack: ["HTML", "CSS", "React", "Node.js"],
+      "Paradox is a globally acclaimed event organized by Team .EXE in Nimbus in past years. The event is conducted on the paradox app made by Team .Exe. The app has sign-in and sign-up features for users to login and solve mind-blowing puzzles available on the app and also show their score on the leaderboard. This year's Paradox is redesigned by us to be a “Team Competition”.",
+    techStack: ["Kotlin", "MongoDB", "Node.js", "Express.js"],
     thumbnailUrl:
-      "https://tse4.mm.bing.net/th?id=OIP.MuvC0yTwPy0pw0pMElgTRgHaEL&pid=Api&P=0&h=180",
-  },
-  {
-    id: 5,
-    title: "Amber",
-    description:
-      "An online platform for booking ambulances, tackling issues like slow response times and unsanitary vehicles. Amber offers multiple services based on patient needs, ensuring safety and reliability.",
-    techStack: ["React", "Node.js", "MongoDB", "Firebase", "Google API"],
-    thumbnailUrl:
-      "https://tse3.mm.bing.net/th?id=OIP.fgN0hATv_MTZ6sMGWIv4CgHaEW&pid=Api&P=0&h=180",
+      "https://res.cloudinary.com/dwwajleyo/image/upload/v1712863572/posters_and_assets/project_thumbnails/paradox-projects_cig9ld.png",
   },
 ];
 
@@ -69,7 +55,7 @@ const Projects = () => {
 
   return (
     <div
-      className="bg-[url('/6385146.jpg')] bg-cover bg-center text-white min-h-screen w-full overflow-x-hidden "
+      className="bg-[url('/6385146.jpg')] bg-cover bg-center text-white min-h-screen w-full overflow-x-hidden"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('/6385146.jpg')`,
       }}
@@ -85,7 +71,7 @@ const Projects = () => {
 
         <div className="text-left mb-16 pl-8" data-aos="fade-left">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-400 font-poppins relative">
-            Web Dev
+            App Dev
             <span className="absolute bottom-0 left-0 w-16 h-1 bg-blue-400 mt-2"></span>
           </h2>
         </div>
@@ -95,7 +81,7 @@ const Projects = () => {
             key={project.id}
             data-aos="fade-up"
             data-aos-delay={`${index * 100}`} // Stagger the animations
-            className="flex flex-col md:flex-row items-center gap-16 md:gap-28 mb-24 lg:ml-12 "
+            className="flex flex-col md:flex-row items-center gap-16 md:gap-28 mb-24 lg:ml-12"
           >
             {/* Left: Image */}
             <div

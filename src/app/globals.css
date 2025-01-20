@@ -1,17 +1,48 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-<<<<<<< HEAD
 
-:root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 body {
+  font-family: 'Montserrat', sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.coordinator-card {
+  width: 100%;
+  margin: 16px 0;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.coordinator-card:hover {
+  border-color: rgb(144 97 249); /* Purple border on hover */
+}
+
+.bg-dark-blue {
+  background-color: rgb(0, 0, 2);
+}
+
+.domain-card {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.gallery-container .group {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-container img {
+  transition: transform 0.5s, border 0.5s;
+}
+
+.gallery-container .group:hover img {
+  transform: scale(1.1);
+  border: 4px solid #6C2BD9; /* Purple border */
 }
 
 @layer utilities {
@@ -29,8 +60,6 @@ body {
     font-weight: 400;
     font-style: normal;
   }
-  
-  
 }
 
 .animate-gradient {
@@ -55,8 +84,7 @@ body {
 }
 
 .neon-text {
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0
-    50px #ff00de, 0 0 75px #ff00de;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
 }
 
 @keyframes titleReveal {
@@ -116,20 +144,10 @@ body {
 }
 
 @keyframes neonFlicker {
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0
-      50px #ff00de, 0 0 75px #ff00de;
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
   }
-  20%,
-  24%,
-  55% {
+  20%, 24%, 55% {
     text-shadow: none;
   }
 }
@@ -151,7 +169,6 @@ body {
   animation: expand 1s ease-out forwards;
 }
 
-/* New animation for scroll-based reveal */
 @keyframes revealOnScroll {
   0% {
     opacity: 0;
@@ -174,7 +191,6 @@ body {
   transform: translateY(0);
 }
 
-/* Spotlight Effect Animation */
 @keyframes spotlightCard {
   0% {
     transform: scale(1);
@@ -188,74 +204,6 @@ body {
   }
 }
 
-/* Apply both animations on hover */
 .spotlight-card:hover {
   animation: decayCard 0.5s ease-out, spotlightCard 0.5s ease-out forwards;
-=======
-/* globals.css */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-body {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.coordinator-card {
-  width: 100%;
-  margin: 16px 0;
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-}
-
-.coordinator-card:hover {
-  border-color: rgb(144 97 249); /* Purple border on hover */
-}
-
-.bg-dark-blue {
-  background-color: rgb(0, 0, 2);
-}
-
-.domain-card {
-  background-color: transparent;
-  backdrop-filter: blur(10px);
-}
-
-.gallery-container .group {
-  position: relative;
-  overflow: hidden;
-}
-
-.gallery-container img {
-  transition: transform 0.5s, border 0.5s;
-}
-
-.gallery-container .group:hover img {
-  transform: scale(1.1);
-  border: 4px solid #6C2BD9; /* Purple border */
-}
-
-/* Previous styles */
-.gallery-container .group {
-  position: relative;
-  overflow: hidden;
-}
-
-.gallery-container img {
-  transition: transform 0.5s, border 0.5s;
-}
-
-.gallery-container .group:hover img {
-  transform: scale(1.05);
-  border: 4px solid #6C2BD9; /* Purple border */
-}
-
-.coordinator-card {
-  width: 300px;
-  margin: 16px;
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-}
-
-.coordinator-card:hover {
-  border-color: rgb(144 97 249); /* Purple border on hover */
->>>>>>> c2c5c15e60f9bb8873695c2989615a273fcf7a04
 }

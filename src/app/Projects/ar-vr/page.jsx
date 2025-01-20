@@ -4,55 +4,16 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const projects = [
+  
   {
     id: 1,
-    title: "Kudos",
+    title: "ENIGMA",
     description:
-      "A platform to enhance employee engagement, task management, and recognition, offering data-driven insights to improve workplace productivity and collaboration.",
-    techStack: [
-      "JavaScript",
-      "Spring Boot",
-      "PostgreSQL",
-      "Hibernate/JPA",
-    ],
+      "Enigma is an Augmented Reality based Android event organized by Team .EXE. It is a story-based game where the participants will search for clues by interacting with the Augmented Reality model and will proceed in the story on successful submission of the answer of a particular quest. The application was made using native Kotlin and using Django as the backend framework, thus it is available only for android users. It was open for participation for students of NIT as well as globally.",
+
+    techStack: ["Kotlin", "Django", "Firebase", "Blender"],
     thumbnailUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPADMudbjlBqRO_hh9cgP1bXlOHJPLrmIxnQ&s",
-  },
-  {
-    id: 2,
-    title: "Type Dash",
-    description:
-      "A dynamic speed typing website that allows users to create and participate in real-time multiplayer typing matches. Users can challenge their friends in real-time typing competitions. The website provides a user-friendly interface where players can test their typing speed, accuracy, and improve their typing skills.",
-    techStack: ["HTML", "CSS", "JavaScript", "Node.js", "MongoDB"],
-    thumbnailUrl:
-      "https://res.cloudinary.com/dwwajleyo/image/upload/v1711746296/posters_and_assets/project_thumbnails/Screenshot_2024-03-30_023406_vxpmet.png",
-  },
-  {
-    id: 3,
-    title: "Task Gambit",
-    description:
-      "Teams face a thrilling challenge navigating through hybrid puzzles blending virtual and physical elements. Solve these puzzles to qualify for further rounds, collaborate, and race against time for the ultimate victory!",
-    techStack: ["React.js", "Express.js", "Socket.io", "MongoDB", "Firebase"],
-    thumbnailUrl:
-      "https://tse3.mm.bing.net/th?id=OIP.CBVGzahuk61Z7PlcW05pKAAAAA&pid=Api&P=0&h=180",
-  },
-  {
-    id: 4,
-    title: "Thrift",
-    description:
-      "A platform connecting sellers and buyers for second-hand goods like books, appliances, and art. Features include secure communication, payment options, and a complaint desk to ensure safe transactions.",
-    techStack: ["HTML", "CSS", "React", "Node.js"],
-    thumbnailUrl:
-      "https://tse4.mm.bing.net/th?id=OIP.MuvC0yTwPy0pw0pMElgTRgHaEL&pid=Api&P=0&h=180",
-  },
-  {
-    id: 5,
-    title: "Amber",
-    description:
-      "An online platform for booking ambulances, tackling issues like slow response times and unsanitary vehicles. Amber offers multiple services based on patient needs, ensuring safety and reliability.",
-    techStack: ["React", "Node.js", "MongoDB", "Firebase", "Google API"],
-    thumbnailUrl:
-      "https://tse3.mm.bing.net/th?id=OIP.fgN0hATv_MTZ6sMGWIv4CgHaEW&pid=Api&P=0&h=180",
+      "https://media.licdn.com/dms/image/D4D12AQExKPZ_a1SSmg/article-cover_image-shrink_720_1280/0/1679565918776?e=2147483647&v=beta&t=ZtatrMAZHVMv7VyRoA-8EzeEcAHiYfiNrRb_xmqBBLQ",
   },
 ];
 
@@ -85,7 +46,7 @@ const Projects = () => {
 
         <div className="text-left mb-16 pl-8" data-aos="fade-left">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-400 font-poppins relative">
-            Web Dev
+            Ar-Vr
             <span className="absolute bottom-0 left-0 w-16 h-1 bg-blue-400 mt-2"></span>
           </h2>
         </div>
