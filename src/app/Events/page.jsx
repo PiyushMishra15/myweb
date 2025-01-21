@@ -1,5 +1,5 @@
 "use client"
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; 
 
@@ -50,14 +50,29 @@ const Events = () => {
         "Trade and Code combines coding with real-time trading. Teams manage a virtual currency to purchase components needed for coding challenges, with the best coders and traders winning exciting prizes!",
     },
   ];
+
+  // Group events by year
+  const groupEventsByYear = () => {
+    return events.reduce((acc, event) => {
+      const year = new Date(event.start_date).getFullYear();
+      if (!acc[year]) acc[year] = [];
+      acc[year].push(event);
+      return acc;
+    }, {});
+  };
+
+  // Get grouped events by year
+  const groupedEvents = groupEventsByYear();
+
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      offset: 100, // Offset before the animation starts
-      easing: "ease-in-out", // Animation easing
-      once: false, // Whether animation should happen only once
+      duration: 1000,
+      offset: 100,
+      easing: "ease-in-out",
+      once: false,
     });
   }, []);
+
   // Check if the event has ended
   const hasEventEnded = (endDate) => {
     const currentDate = new Date();
@@ -73,55 +88,76 @@ const Events = () => {
     >
       <div className="container mx-auto py-8 px-4">
         {/* Page Title */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-24 font-lora text-blue-300 drop-shadow-lg"           data-aos="fade-down"
+        <h1
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-24 font-fontdiner bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title"
+          data-aos="fade-down"
         >
           Previous Events
         </h1>
 
-        {events.map((event) => (
-          <div
-            key={event.id}
-            data-aos="fade-up"
+        {/* Loop through grouped events by year */}
+        {Object.entries(groupedEvents).map(([year, yearEvents]) => (
+          <div key={year} className="mb-24 animate-fade-in">
+            {/* Year Header */}
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-16 text-center font-playfair text-gray-200 glow animate-pulse">
+            {Number(year) - 1} - {year}
+            </h2>
 
-            className="flex flex-col md:flex-row-reverse items-center md:items-start gap-3 mb-40"
-          >
-            {/* Right: Image */}
-            <div data-aos="zoom-out-left"  className="w-full  sm:w-3/4 md:w-1/3 md:mr-12 ">
-              <img
-                src={event.image_url}
-                alt={event.title}
-                className="w-full h-auto object-cover rounded-lg shadow-md spotlight-card"
-              />
-            </div>
+            {/* Map through events for the year */}
+            {yearEvents.map((event) => (
+              <div
+                key={event.id}
+                data-aos="fade-up"
+                className="flex flex-col md:flex-row-reverse items-center md:items-start gap-3 mb-40"
+              >
+                {/* Right: Image */}
+                <div
+                  data-aos="zoom-out-left"
+                  className="w-full sm:w-3/4 md:w-1/3 md:mr-12"
+                >
+                  <img
+                    src={event.image_url}
+                    alt={event.title}
+                    className="w-full h-auto object-cover rounded-xl shadow-md spotlight-card"
+                  />
+                </div>
 
-            {/* Left: Text Content */}
-            <div data-aos="zoom-out-right" className="w-full ml-8 sm:w-3/4 md:w-2/3">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold font-poppins text-blue-300   mb-4">
-                {event.title}
-              </h2>
-              <p className="text-lg sm:text-2xl md:text-3xl text-gray-200 mb-4 font-montserrat md:w-2/3 ">
-                {event.description}
-              </p>
-              <p className="text-2xl sm:text-xl md:text-3xl font-playair mb-4">
-                <span className="font-medium text-gray-300">Date:</span>{" "}
-                <span className="text-blue-300">
-                  {new Date(event.start_date)
-                    .toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })
-                    .replace(/,/g, " ")}
-                </span>
-              </p>
+                {/* Left: Text Content */}
+                <div
+                  data-aos="zoom-out-right"
+                  className="w-full ml-8 sm:w-3/4 md:w-2/3"
+                >
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold font-poppins mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title">
+                    {event.title}
+                  </h2>
+                  <p className="text-lg sm:text-2xl md:text-3xl text-gray-200 mb-4 font-montserrat md:w-2/3">
+                    {event.description}
+                  </p>
+                  <p className="text-2xl sm:text-xl md:text-3xl font-playair mb-4">
+                    <span className="font-medium text-gray-300">Date:</span>{" "}
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title">
+                      {new Date(event.start_date)
+                        .toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })
+                        .replace(/,/g, " ")}
+                    </span>
+                  </p>
 
-              {/* Event Over Button */}
-              {hasEventEnded(event.end_date) && (
-                <button data-aos="flip-right" className="bg-red-600 text-white px-6 py-3 rounded-lg text-lg sm:text-xl font-bold mt-4">
-                  Event Over
-                </button>
-              )}
-            </div>
+                  {/* Event Over Button */}
+                  {hasEventEnded(event.end_date) && (
+                    <button
+                      data-aos="flip-right"
+                      className="bg-red-600 text-white px-6 py-3 rounded-lg text-lg sm:text-xl font-bold mt-4"
+                    >
+                      Event Over
+                    </button>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         ))}
 

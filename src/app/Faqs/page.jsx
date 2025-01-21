@@ -17,28 +17,12 @@ export default function App() {
 
   return (
     <>
-    <div className="relative min-h-screen  text-white py-10 px-4 ">
+    <div className="bg-[url('/6385146.jpg')] relative min-h-screen  text-white py-10 px-4 "
+    style={{
+      backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/6385146.jpg')`,
+    }}>
 
-      {/* Background Squares */}
-      <div
-        style={{
-          position: "absolute", 
-          top: 0,
-          left: 0,
-          width: "100vw",
-          height: "100%",
-          backgroundColor: "#000",
-          zIndex: "-1",
-        }}
-      >
-        <Squares
-          speed={0.1}
-          squareSize={40}
-          direction="diagonal"
-          borderColor="#4b5563"
-          hoverFillColor="#222"
-        />
-      </div>
+      
 
       {/* FAQ Content */}
       <div className="container mx-auto mt-10 px-4 relative z-10  ">
@@ -142,6 +126,8 @@ export default function App() {
             </div>
           </div>
         </div>
+        <hr className="border-t-2 border-gray-700 mt-80 animate-expand" />
+
       </div>
     </div></>
   );

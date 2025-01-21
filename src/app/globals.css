@@ -84,8 +84,13 @@ body {
 }
 
 .neon-text {
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  color: #1e90ff; /* Neon blue base color */
+  text-shadow: 
+    0 0 5px #93c5fd, /* from-blue-300 */
+    0 0 30px #1e40af; /* deeper blue */
 }
+
+
 
 @keyframes titleReveal {
   0% {

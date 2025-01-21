@@ -25,7 +25,7 @@ export default function ContactUs() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Submitted:", formData);
-    
+
     toast({
       title: "Query Submitted",
       description: "We will Back To you Soon !",
@@ -35,107 +35,110 @@ export default function ContactUs() {
 
   return (
     <>
-    <div className=" text-white min-h-screen flex flex-col">
-      
-
-         <div
+      <div className="bg-[url('/6385146.jpg')] text-white min-h-screen flex flex-col"
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100vw",
-          height: "100%",
-          backgroundColor: "#000",
-          zIndex: "-1",
-        }}
-      >
-        <Squares
-          speed={0.1}
-          squareSize={40}
-          direction="diagonal"
-          borderColor="#4b5563"
-          hoverFillColor="#222"
-        />
-      </div>
+          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/6385146.jpg')`,
+        }}>
 
-        
-       <section className="flex-grow  py-10 px-4">
-    
-        <div className="max-w-lg mx-auto">
-          <h2 className="text-2xl font-semibold text-center text-white mb-6">
-            Contact Us
-          </h2>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-          
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-lg font-medium text-gray-300"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                placeholder="Write Your Name Here!!"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="mt-2 p-2 w-full rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-            </div>
-
-        
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-lg font-medium text-gray-300"
-              >
-                 Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                placeholder="Write Your Email Here!!"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="mt-2 p-2 w-full rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-            </div>
-
-          
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-lg font-medium text-gray-300"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                placeholder="Write Your Query!!"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className="mt-2 p-2 w-full rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                rows="4"
-                required
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              Send Message
-            </button>
-          </form>
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100%",
+            backgroundColor: "#000",
+            zIndex: "-1",
+          }}
+        >
+          <Squares
+            speed={0.1}
+            squareSize={40}
+            direction="diagonal"
+            borderColor="#4b5563"
+            hoverFillColor="#222"
+          />
         </div>
-      </section>
-     
-    </div></>
+
+
+        <section className="flex-grow  py-10 px-4">
+
+          <div className="max-w-lg mx-auto">
+            <h2 className="text-2xl font-semibold text-center text-white mb-6">
+              Contact Us
+            </h2>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-lg font-medium text-gray-300"
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="Write Your Name Here!!"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="mt-2 p-2 w-full rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                />
+              </div>
+
+
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-lg font-medium text-gray-300"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Write Your Email Here!!"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="mt-2 p-2 w-full rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                />
+              </div>
+
+
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-lg font-medium text-gray-300"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  placeholder="Write Your Query!!"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="mt-2 p-2 w-full rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </section>
+
+      </div></>
   );
 }
