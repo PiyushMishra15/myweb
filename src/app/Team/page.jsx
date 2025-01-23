@@ -25,7 +25,7 @@ const TeamSection = () => {
 
   const renderTeamSection = (title, members) => (
     <div className="team-category">
-      <h2 className="section-subtitle">{title}</h2>
+      <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-16 mt-16 text-center  font-playfair text-gray-200 glow animate-pulse">{title}</h2>
       <div className="team-grid">
         {members.length > 0 ? (
           members.map((member, index) => (
@@ -60,8 +60,13 @@ const TeamSection = () => {
   );
 
   return (
-    <section className="team-section">
-      <h1 className="section-title">Meet Our Team</h1>
+    <section className=" bg-[url('/6385146.jpg')] "
+    style={{
+      backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/6385146.jpg')`,
+    }}>
+      <div className="">
+      <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-24 font-fontdiner bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title">Meet Our Team</h1>
+      </div>
 
       {renderTeamSection("Final Year Members", finalYearMembers)}
 

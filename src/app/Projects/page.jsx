@@ -77,7 +77,7 @@ const Projects = () => {
       <div className="container mx-auto py-16 px-6">
         {/* Page Title */}
         <h1
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-16 font-poppins text-blue-300 drop-shadow-lg"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-16 font-poppins bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title"
           data-aos="fade-down"
         >
           Our Projects
@@ -103,7 +103,7 @@ const Projects = () => {
               data-aos-anchor-placement="bottom-bottom"
               className="w-full sm:w-2/3 md:w-1/3 md:mr-12 flex-shrink-0"
             >
-              <div className="rounded-xl shadow-lg overflow-hidden transform transition-transform duration-500 hover:scale-105">
+              <div className="rounded-xl shadow-lg overflow-hidden spotlight-card">
                 <img
                   src={project.thumbnailUrl}
                   alt={project.title}
@@ -118,7 +118,7 @@ const Projects = () => {
               data-aos-anchor-placement="bottom-bottom"
               className="w-full sm:w-2/3 md:w-2/3 text-left space-y-6"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-poppins text-blue-300">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-poppins text-blue-300 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title">
                 {project.title}
               </h2>
 
@@ -129,7 +129,7 @@ const Projects = () => {
               </p>
 
               {/* Description */}
-              <p className="text-lg sm:text-xl md:text-2xl">{project.description}</p>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-4 font-montserrat md:w-2/3">{project.description}</p>
             </div>
           </div>
         ))}
