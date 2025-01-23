@@ -4,7 +4,7 @@
 
 import React, { useState } from "react";
 import { useToast } from "@/hooks/use-toast"
-import Squares from "../../../Squares/Squares";
+import { Orbitron, Playfair_Display, Montserrat, Fontdiner_Swanky } from 'next/font/google';
 
 export default function ContactUs() {
   const { toast } = useToast()
@@ -41,31 +41,13 @@ export default function ContactUs() {
         }}>
 
 
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100%",
-            backgroundColor: "#000",
-            zIndex: "-1",
-          }}
-        >
-          <Squares
-            speed={0.1}
-            squareSize={40}
-            direction="diagonal"
-            borderColor="#4b5563"
-            hoverFillColor="#222"
-          />
-        </div>
+        
 
 
         <section className="flex-grow  py-10 px-4">
 
           <div className="max-w-lg mx-auto">
-            <h2 className="text-2xl font-semibold text-center text-white mb-6">
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-24 font-fontdiner bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title">
               Contact Us
             </h2>
 
