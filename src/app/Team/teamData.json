@@ -527,7 +527,7 @@
         "linkedin": "https://www.linkedin.com/in/kashish-choudhary-91280b277",
         "name": "Kashish Choudhary ",
         "position": "Executive Member",
-        "tagline": "Innovate, create , dominate",
+        "tagline": "Roses are red Violets are Blue Unexpected '{' on line 32",
         "year": 2
     },
     {
@@ -648,6 +648,16 @@
         "name": "Srishti Chamoli",
         "position": "Executive Member",
         "tagline": "Never Settle",
+        "year": 2
+    },
+    {
+        "github": "https://github.com/utkarshgupta2804",
+        "imageURL": "https://res.cloudinary.com/dhidmdvtx/image/upload/v1737640090/WhatsApp_Image_2025-01-23_at_6.39.16_PM_ubvzmw.jpg",
+        "key": 83,
+        "linkedin": "https://www.linkedin.com/in/utkarsh-gupta-5aa661261",
+        "name": "Utkarsh",
+        "position": "Executive Member",
+        "tagline": "Making Experiences diary of 60  years",
         "year": 2
     }
 ]

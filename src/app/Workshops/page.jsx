@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Orbitron, Playfair_Display, Montserrat, Fontdiner_Swanky } from "next/font/google";
 import AOS from "aos";
@@ -31,6 +31,8 @@ const montserrat = Montserrat({
 });
 
 const Workshops = () => {
+  const [expandedWorkshopId, setExpandedWorkshopId] = useState(null);
+
   const workshops = [
     {
       id: 11,
@@ -41,7 +43,7 @@ const Workshops = () => {
       start_date: "2024-02-14T23:27:20",
       end_date: "2024-02-15T17:00:00Z",
       description:
-        "This backend workshop is a training session focused on the development and maintenance of the server-side of software applications. This workshop typically covers topics such as backend technologies like Node.js, databases, API integration, security, and performance optimization. Participants learn how to create efficient and scalable backend systems to support frontend applications. By attending this backend workshop, developers can enhance their technical skills and stay up-to-date with the latest trends in backend development.",
+        "This backend workshop is a training session focused on the development and maintenance of the server-side of software applications. This workshop typically covers topics such as backend technologies like Node.js, databases, API integration, security, and performance optimization.",
     },
     {
       id: 9,
@@ -52,7 +54,7 @@ const Workshops = () => {
       start_date: "2023-03-19T10:00:00Z",
       end_date: "2023-03-19T13:00:00Z",
       description:
-        "Through this workshop, participants acquired the fundamentals of security vulnerabilities, with a focus on web-specific flaws, and got hands-on practice detecting bugs on real platforms. The information-gathering phase of ethical hacking, which can span anything from network infrastructure to employee contact information, was explained to the participants.",
+        "Through this workshop, participants acquired the fundamentals of security vulnerabilities, with a focus on web-specific flaws, and got hands-on practice detecting bugs on real platforms.",
     },
     {
       id: 10,
@@ -63,7 +65,7 @@ const Workshops = () => {
       start_date: "2023-02-05T16:00:00Z",
       end_date: "2023-02-05T18:00:00Z",
       description:
-        "The goal of this session was to provide the students with a foundational understanding of blockchain technology and the decentralized technology world, as well as hands-on experience building NFTs on the Polygon network and putting their data on IPFS. The workshop covered the Polygon network, its characteristics, and how to deploy a smart contract to it in addition to smart contracts, their structure, and the many components that make up a smart contract.",
+        "The goal of this session was to provide the students with a foundational understanding of blockchain technology and the decentralized technology world, as well as hands-on experience building NFTs on the Polygon network and putting their data on IPFS.",
     },
   ];
 
@@ -83,7 +85,6 @@ const Workshops = () => {
       rootMargin: "0px",
       threshold: 0.1,
     };
-    
 
     const handleIntersect = (entries, observer) => {
       entries.forEach((entry) => {
@@ -99,6 +100,7 @@ const Workshops = () => {
     document.querySelectorAll(".workshop-item").forEach((el) => {
       observer.observe(el);
     });
+
     AOS.init({
       duration: 1000,
       offset: 100,
@@ -108,6 +110,12 @@ const Workshops = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  const toggleExpand = (workshopId) => {
+    setExpandedWorkshopId(expandedWorkshopId === workshopId ? null : workshopId);
+  };
+
+  const isExpanded = (workshopId) => expandedWorkshopId === workshopId;
 
   return (
     <div
@@ -119,7 +127,10 @@ const Workshops = () => {
       }}
     >
       <div className="container mx-auto py-16 px-4">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-24 font-fontdiner bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title"  data-aos="fade-down">
+        <h1
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-24 font-fontdiner bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title"
+          data-aos="fade-down"
+        >
           Workshops
         </h1>
 
@@ -130,42 +141,49 @@ const Workshops = () => {
             </h2>
             {groupedWorkshops[year].map((workshop, idx) => (
               <div
-              key={workshop.id}
-              data-aos="fade-up"
-              className="flex flex-col md:flex-row-reverse items-center md:items-start gap-12 mb-32 transition-all duration-300 ease-in-out hover:scale-105 workshop-item opacity-0"
-            >
-              {/* Right Side: Poster Image */}
-              <div className="w-full sm:w-3/4 md:w-1/3 md:ml-12" data-aos="zoom-out-left">
-                <img
-                  src={workshop.image_url}
-                  alt={workshop.title}
-                  className="w-full h-auto object-cover rounded-xl shadow-md spotlight-card"
-                />
+                key={workshop.id}
+                data-aos="fade-up"
+                className="flex flex-col md:flex-row-reverse items-center md:items-start gap-12 mb-32 transition-all duration-300 ease-in-out hover:scale-105 workshop-item opacity-0"
+              >
+                {/* Right Side: Poster Image */}
+                <div className="w-full sm:w-3/4 md:w-1/3 md:ml-12" data-aos="zoom-out-left">
+                  <img
+                    src={workshop.image_url}
+                    alt={workshop.title}
+                    className="w-4/5 h-auto object-cover rounded-xl shadow-md spotlight-card"
+                  />
+                </div>
+
+                {/* Left Side: Title, Description, and Date */}
+                <div className="w-full md:w-1/2 lg:w-3/5" data-aos="zoom-out-right">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold font-poppins mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title">
+                    {workshop.title}
+                  </h2>
+                  <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-4 font-montserrat md:w-2/3">
+                    {isExpanded(workshop.id)
+                      ? workshop.description
+                      : workshop.description.slice(0, 160) + "..."}
+                    <button
+                      onClick={() => toggleExpand(workshop.id)}
+                      className=" font-semibold ml-2 focus:outline-none bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-blue-700 to-blue-900 animate-gradient animate-title"
+                    >
+                      {isExpanded(workshop.id) ? "Read Less" : "Read More"}
+                    </button>
+                  </p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-playair">
+                    <span className="font-medium text-gray-400">Date:</span>{" "}
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title ">
+                      {new Date(workshop.start_date)
+                        .toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })
+                        .replace(/,/g, " ")}
+                    </span>
+                  </p>
+                </div>
               </div>
-            
-              {/* Left Side: Title, Description, and Date */}
-              <div className="w-full md:w-1/2 lg:w-3/5" data-aos="zoom-out-right">
-                <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold font-poppins  mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title">
-                  {workshop.title}
-                </h3>
-                <p className="ext-lg sm:text-2xl md:text-3xl text-gray-200 mb-4 font-montserrat md:w-2/3">
-                  {workshop.description}
-                </p>
-                <p className="text-xl sm:text-2xl md:text-3xl font-playair">
-                  <span className="font-medium text-gray-400">Date:</span>{" "}
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title ">
-                    {new Date(workshop.start_date)
-                      .toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })
-                      .replace(/,/g, " ")}
-                  </span>
-                </p>
-              </div>
-            </div>
-            
             ))}
           </div>
         ))}

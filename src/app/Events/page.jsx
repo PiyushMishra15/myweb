@@ -130,7 +130,7 @@ const Events = () => {
                   <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold font-poppins mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title">
                     {event.title}
                   </h2>
-                  <p className="text-lg sm:text-2xl md:text-3xl text-gray-200 mb-4 font-montserrat md:w-2/3">
+                  <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-4 font-montserrat md:w-2/3">
                     {event.description}
                   </p>
                   <p className="text-2xl sm:text-xl md:text-3xl font-playair mb-4">

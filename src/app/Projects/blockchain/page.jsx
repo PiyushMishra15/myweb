@@ -62,14 +62,14 @@ const Projects = () => {
     >
       <div className="container mx-auto py-16 px-6">
         <h1
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-16 font-poppins text-blue-300 drop-shadow-lg"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-16 font-poppins text-blue-300 drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title"
           data-aos="fade-down"
         >
           Our Projects
         </h1>
 
         <div className="text-left mb-16 pl-8" data-aos="fade-left">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-400 font-poppins relative">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-poppins relative bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 animate-gradient animate-title">
             Blockchain
             <span className="absolute bottom-0 left-0 w-16 h-1 bg-blue-400 mt-2"></span>
           </h2>
@@ -88,11 +88,11 @@ const Projects = () => {
               data-aos-anchor-placement="bottom-bottom"
               className="w-full sm:w-2/3 md:w-1/3 md:mr-12 flex-shrink-0"
             >
-              <div className="rounded-xl shadow-lg overflow-hidden transform transition-transform duration-500 hover:scale-105">
+              <div className="rounded-xl shadow-lg overflow-hidden spotlight-card">
                 <img
                   src={project.thumbnailUrl}
                   alt={project.title}
-                  className="w-full h-64 object-cover rounded-lg"
+                  className="w-full h-64 object-cover rounded-lg "
                 />
               </div>
             </div>
@@ -103,7 +103,7 @@ const Projects = () => {
               data-aos-anchor-placement="bottom-bottom"
               className="w-full sm:w-2/3 md:w-2/3 text-left space-y-6"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-poppins text-blue-300">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-poppins bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title">
                 {project.title}
               </h2>
 

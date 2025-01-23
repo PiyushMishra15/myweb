@@ -1,43 +1,97 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 const images = [
-  '/i1.png',
-  '/i2.png',
-  '/i3.png',
-  '/i4.png',
-  '/i5.png',
-  '/i6.png',
-  '/i7.png',
-  '/i8.png',
-  '/i10.png',
-  '/i11.png',
-  '/i12.png',
+  '/1.png',  // First row
+  '/2.png',  // First row
+  '/3.png',  // First row
+  '/4.png',  // Second row
+  '/5.png',  // Second row
+  '/6.png',  // Second row
+  '/7.png',  // Third row
+  '/8.png',  // Third row
+  '/9.png',  // Third row
+  '/10.png', // Fourth row
+  '/11.png', // Fourth row
+  '/12.png', // Fourth row
 ];
 
 const Gallery = () => {
-  const [mainImageIndex, setMainImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setMainImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="gallery-container py-20 relative">
-      <h2 className="text-4xl font-black text-center text-purple-500 mb-10">GALLERY</h2>
-      <div className="main-image-container flex justify-center mb-10 relative">
-        <Image
-          src={images[mainImageIndex]}
-          alt={`Gallery Image ${mainImageIndex + 1}`}
-          width={1200}
-          height={800}
-          className="main-image w-full h-[600px] object-contain rounded-lg shadow-lg transition-transform duration-500"
-        />
+    <div className="gallery-container py-20 bg-[#1E1E1E] text-white">
+      <h2 className="text-4xl font-black text-center text-purple-500 mb-10">Gallery</h2>
+
+      {/* First Row */}
+      <div className="flex justify-center gap-6 mb-6">
+        {[0, 1, 2].map((index) => (
+          <div
+            key={index}
+            className={`relative group overflow-hidden rounded-lg shadow-lg w-[350px] h-[230px] ${[1].includes(index) ? 'border-4 border-purple-500' : ''}`}
+          >
+            <Image
+              src={images[index]}
+              alt={`Gallery Image ${index + 1}`}
+              width={350}
+              height={230}
+              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Second Row */}
+      <div className="flex justify-center gap-6 mb-6">
+        {[3, 4, 5].map((index) => (
+          <div
+            key={index}
+            className={`relative group overflow-hidden rounded-lg shadow-lg w-[300px] h-[200px] ${[3, 5].includes(index) ? 'border-4 border-purple-500' : ''}`}
+          >
+            <Image
+              src={images[index]}
+              alt={`Gallery Image ${index + 1}`}
+              width={300}
+              height={200}
+              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Third Row */}
+      <div className="flex justify-center gap-6 mb-6">
+        {[6, 7, 8].map((index) => (
+          <div
+            key={index}
+            className={`relative group overflow-hidden rounded-lg shadow-lg w-[350px] h-[230px] ${[6, 8].includes(index) ? 'border-4 border-purple-500' : ''}`}
+          >
+            <Image
+              src={images[index]}
+              alt={`Gallery Image ${index + 1}`}
+              width={350}
+              height={230}
+              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Fourth Row */}
+      <div className="flex justify-center gap-6">
+        {[9, 10, 11].map((index) => (
+          <div
+            key={index}
+            className={`relative group overflow-hidden rounded-lg shadow-lg w-[300px] h-[200px] ${[10].includes(index) ? 'border-4 border-purple-500' : ''}`}
+          >
+            <Image
+              src={images[index]}
+              alt={`Gallery Image ${index + 1}`}
+              width={300}
+              height={200}
+              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
