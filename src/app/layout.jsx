@@ -1,7 +1,6 @@
 import React from "react";
 import "./globals.css";
 import Navbar from '../components/Navbar'; 
-
 import { Toaster } from "@/components/ui/toaster"
 import Footerr from '../components/Footer'
 
@@ -14,8 +13,11 @@ export default function RootLayout({ children }) {
       </head>
 
       <body>
+   
         <Navbar></Navbar>
-        <main>{children}</main>
+      
+        <main>
+          {children}</main>
      
       <Toaster />
       <Footerr/>
@@ -24,4 +26,4 @@ export default function RootLayout({ children }) {
 
     </html>
   );
-}
+}  
