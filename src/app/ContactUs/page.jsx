@@ -1,7 +1,5 @@
 "use client"
 
-
-
 import React, { useState } from "react";
 import { useToast } from "@/hooks/use-toast"
 import { Orbitron, Playfair_Display, Montserrat, Fontdiner_Swanky } from 'next/font/google';
@@ -24,13 +22,24 @@ export default function ContactUs() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+  
 
     toast({
       title: "Query Submitted",
       description: "We will Back To you Soon !",
-    })
+      style: {
+        zIndex: 9999,
+        color: "white", // Set the text color to white
+      }
+    });
+    
 
+    // Reset form data
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
   };
 
   return (
@@ -40,19 +49,15 @@ export default function ContactUs() {
           backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/6385146.jpg')`,
         }}>
 
-
         
 
-
-        <section className="flex-grow  py-10 px-4">
-
+        <section className="flex-grow py-10 px-4">
           <div className="max-w-lg mx-auto">
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-24 font-fontdiner bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title">
               Contact Us
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-
               <div>
                 <label
                   htmlFor="name"
@@ -71,7 +76,6 @@ export default function ContactUs() {
                   required
                 />
               </div>
-
 
               <div>
                 <label
@@ -92,7 +96,6 @@ export default function ContactUs() {
                 />
               </div>
 
-
               <div>
                 <label
                   htmlFor="message"
@@ -111,6 +114,7 @@ export default function ContactUs() {
                   required
                 ></textarea>
               </div>
+
               <button
                 type="submit"
                 className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -121,6 +125,7 @@ export default function ContactUs() {
           </div>
         </section>
 
-      </div></>
+      </div>
+    </>
   );
 }

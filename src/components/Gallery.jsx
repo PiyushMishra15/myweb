@@ -1,6 +1,6 @@
 'use client'
-// src/components/Gallery.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const images = [
   '/i1.png',
@@ -17,19 +17,27 @@ const images = [
 ];
 
 const Gallery = () => {
+  const [mainImageIndex, setMainImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setMainImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="gallery-container py-20">
+    <div className="gallery-container py-20 relative">
       <h2 className="text-4xl font-black text-center text-purple-500 mb-10">GALLERY</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
-        {images.map((src, index) => (
-          <div key={index} className="group relative">
-            <img
-              src={src}
-              alt={`Gallery Image ${index + 1}`}
-              className="w-full h-64 object-cover rounded-lg shadow-lg transform transition-transform duration-500 group-hover:scale-105 group-hover:border-4 group-hover:border-purple-500"
-            />
-          </div>
-        ))}
+      <div className="main-image-container flex justify-center mb-10 relative">
+        <Image
+          src={images[mainImageIndex]}
+          alt={`Gallery Image ${mainImageIndex + 1}`}
+          width={1200}
+          height={800}
+          className="main-image w-full h-[600px] object-contain rounded-lg shadow-lg transition-transform duration-500"
+        />
       </div>
     </div>
   );

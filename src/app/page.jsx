@@ -45,30 +45,31 @@ const coordinators = [
   {
     name: 'TP Sharma',
     role: 'Faculty Incharge',
-    image: '/tp-sharma.jpg',
+    image: '/tpsharma.png',
     linkedin: 'https://www.linkedin.com/in/tp-sharma',
   },
   {
     name: 'Somendra Aggarwal',
     role: 'Club Coordinator',
-    image: '/somendra-aggarwal.jpg',
-    linkedin: 'https://www.linkedin.com/in/somendra-aggarwal',
+    image: 'https://res.cloudinary.com/dwwajleyo/image/upload/v1709371192/membersexe%402024/somendra_anjalj_p6zxyq.jpg',
+    linkedin: 'https://www.linkedin.com/in/somendraaggarwal11',
   },
   {
     name: 'Mansi Joshi',
     role: 'Club Coordinator',
-    image: '/mansi-joshi.jpg',
-    linkedin: 'https://www.linkedin.com/in/mansi-joshi',
+    image: 'https://res.cloudinary.com/dwwajleyo/image/upload/v1711644927/membersexe%402024/mansi_ikkv2u.jpg',
+    linkedin: 'https://www.linkedin.com/in/mansi-joshi-68b709269/',
   },
 ];
-
 const CoordinatorCard = ({ name, role, image, linkedin }) => (
-  <a href={linkedin} target="_blank" rel="noopener noreferrer" className="coordinator-card group w-full mb-8">
-    <div className="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 bg-gray-800 bg-opacity-50 p-6 flex items-center">
-      <img src={image} alt={name} className="w-24 h-24 rounded-full object-cover mr-6" />
-      <div className="text-white">
-        <h3 className="text-2xl font-bold">{name}</h3>
-        <p className="text-lg">{role}</p>
+  <a href={linkedin} target="_blank" rel="noopener noreferrer" className="coordinator-card w-full md:w-1/3 px-4 mb-8">
+    <div className="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 bg-gray-800 bg-opacity-50 p-6">
+      <div className="flex flex-col items-center text-center">
+        <img src={image} alt={name} className="w-32 h-32 rounded-full object-cover mb-4" />
+        <div className="text-white">
+          <h3 className="text-2xl font-bold">{name}</h3>
+          <p className="text-lg">{role}</p>
+        </div>
       </div>
     </div>
   </a>
@@ -88,6 +89,7 @@ export default function Page() {
           />
         </div>
         {/*content*/}
+        
         <div className='relative z-10 text-white pt-20'> {/* Add padding to the top */}
           <div className='flex items-center justify-center h-screen'>
             <video 
@@ -133,22 +135,22 @@ export default function Page() {
         <div className="relative z-10 text-white pt-20 bg-dark-blue"> {/* Apply the new background color class */}
           <Gallery /> {/* Add Gallery component */}
         </div>
-        <div className="relative z-10 text-white pt-20 bg-dark-blue"> {/* Apply the new background color class */}
-          <div className="flex flex-col items-center text-center text-purple-500 font-extrabold text-4xl px-4">
-            CO-ORDINATORS
-          </div>
-          <div className="flex flex-wrap justify-center">
-            {coordinators.map((coordinator, index) => (
-              <CoordinatorCard
-                key={index}
-                name={coordinator.name}
-                role={coordinator.role}
-                image={coordinator.image}
-                linkedin={coordinator.linkedin}
-              />
-            ))}
-          </div>
-        </div>
+        <div className="relative z-10 text-white pt-20 bg-dark-blue">
+  <div className="flex flex-col items-center text-center text-purple-500 font-extrabold text-4xl px-4 mb-10">
+    CO-ORDINATORS
+  </div>
+  <div className="flex flex-wrap justify-center max-w-7xl mx-auto px-4">
+    {coordinators.map((coordinator, index) => (
+      <CoordinatorCard
+        key={index}
+        name={coordinator.name}
+        role={coordinator.role}
+        image={coordinator.image}
+        linkedin={coordinator.linkedin}
+      />
+    ))}
+  </div>
+</div>
       </div>
     </>
   );
