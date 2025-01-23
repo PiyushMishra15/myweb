@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Miltonian&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+
+    color: #fff;
+
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.team-section {
+    margin: 50px 20px;
+    text-align: center;
+}
+
+.section-title,
+.section-subtitle {
+    font-family: 'Miltonian', cursive;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-card {
+    background: linear-gradient(145deg, #d3d3d3, #a9a9a9);
+
+    margin: 10px;
+    margin-bottom: 50px;
+    width: 300px;
+    padding: 20px;
+    line-height: 20px;
+    color: black;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    transition: border 0.3s ease, transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+    border: 4px solid;
+    border-image-source: linear-gradient(45deg, #6a5acd, #9370db, #8a2be2);
+
+    border-image-slice: 1;
+}
+
+.team-card h2.name {
+    font-family: 'Miltonian', cursive;
+    /* Use the imported font */
+    color: #000;
+    font-size: 28px;
+
+    margin-top: 50px;
+}
+
+.team-card h3.position {
+    color: #9370db;
+    margin: 12px 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.team-card .team_img {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+    border-radius: 50%;
+    background: #fff;
+    border: 5px solid orange;
+    box-shadow: 0 0 15px 5px rgba(255, 165, 0, 0.5);
+
+    transition: box-shadow 0.3s ease;
+}
+
+.team-card .team_img:hover {
+    box-shadow: 0 0 20px 10px rgba(255, 140, 0, 0.8);
+
+}
+
+.team-card .team_img img {
+    width: 90px;
+    height: 90px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.links a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.links a img:hover {
+    transform: scale(1.2);
+}
+
+
+@media (min-width: 768px) {
+    .team-card {
+        width: calc(50% - 20px);
+
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .team-card {
+        width: calc(25% - 20px);
+
+    }
+
+    .section-title,
+    .section-subtitle {
+        font-size: 3rem;
+
+    }
+}
