@@ -1,6 +1,6 @@
 import Squares from '../../Squares/Squares';
-import DomainCard from '../../src/components/DomainCard'; // Import DomainCard component
-import Gallery from '../../src/components/Gallery'; // Import Gallery component
+import DomainCard from '../../src/components/DomainCard';
+import Gallery from '../../src/components/Gallery';
 
 const domains = [
   {
@@ -61,58 +61,60 @@ const coordinators = [
     linkedin: 'https://www.linkedin.com/in/mansi-joshi-68b709269/',
   },
 ];
-const CoordinatorCard = ({ name, role, image, linkedin }) => (
-  <a href={linkedin} target="_blank" rel="noopener noreferrer" className="coordinator-card w-full md:w-1/3 px-4 mb-8">
-    <div className="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 bg-gray-800 bg-opacity-50 p-6">
-      <div className="flex flex-col items-center text-center">
-        <img src={image} alt={name} className="w-32 h-32 rounded-full object-cover mb-4" />
-        <div className="text-white">
-          <h3 className="text-2xl font-bold">{name}</h3>
-          <p className="text-lg">{role}</p>
-        </div>
-      </div>
+const CoordinatorCard = ({ name, role, image, linkedin, index }) => (
+<a 
+  href={linkedin} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className={`coordinator-card w-full md:w-4/5 mb-8 mx-auto flex items-center ${
+    index % 2 === 0 ? 'zigzag-left' : 'zigzag-right'
+  }`}
+>
+  <div className="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 bg-transparent hover:bg-gray-800/30 p-6 flex flex-col sm:flex-row items-center space-x-6">
+    {/* Image */}
+    <img 
+      src={image} 
+      alt={name} 
+      className="w-32 h-32 rounded-full object-cover border-4 border-purple-500 flex-shrink-0"
+    />
+    {/* Text Content */}
+    <div className="text-content text-white">
+      <h3 className="text-3xl fontdiner-swanky-regular text-purple-500">{name}</h3>
+      <p className="text-xl text-gray-300">{role}</p>
     </div>
-  </a>
+  </div>
+</a>
 );
+
 
 export default function Page() {
   return (
+    
     <>
+ 
       <div className='relative min-h-screen bg-gray-900 text-gray-200 font-sans'>
-        <div className='absolute top-0 left-0 w-full h-full'>
-          <Squares 
-            speed={0.5} 
-            squareSize={40}
-            direction='diagonal' // up, down, left, right, diagonal
-            borderColor='#000000' // Black color
-            hoverFillColor='slate' // Gray color
-          />
-        </div>
-        {/*content*/}
-        
-        <div className='relative z-10 text-white pt-20'> {/* Add padding to the top */}
-          <div className='flex items-center justify-center h-screen'>
-            <video 
-              className='absolute top-0 left-0 w-full h-full object-cover' 
-              src='/01081_1.mp4' // Corrected path
-              autoPlay 
-              muted 
-              title='Your Video Title' // Add title attribute
-            />
+        {/* Video Section */}
+        <div className="relative z-10">
+  {/* Container with gradient background */}
+  <div className="flex items-center justify-center h-screen overflow-hidden bg-gradient-to-b from-black via-blue-900 to-black">
+    {/* Video */}
+    <video
+      className="absolute object-contain w-full h-auto max-w-none sm:max-w-[90%] md:max-w-[70%] lg:max-w-full"
+      src="/main.mov"
+      autoPlay
+      muted
+      loop
+      title="Your Video Title"
+    />
+            <div className='absolute inset-0 flex items-center justify-center'>
+              <h1 className='text-6xl font-bold text-white fontdiner-swanky-regular'></h1>
+            </div>
           </div>
         </div>
-        {/*<div className="relative z-10 text-white pt-20 bg-dark-blue"> 
-          <div className="flex flex-col items-center text-center text-purple-500 font-extrabold text-4xl px-4">
-            About Our Team
-          </div>
-          <p className="flex flex-col p-4 md:p-10 font-semibold text-center text-lg md:text-2xl md:max-w-screen-md mx-auto">
-            We are a group of passionate individuals united by a shared commitment to delivering excellence in every aspect of our work. 
-            With a blend of creativity, expertise, and dedication, we strive to exceed expectations and make a meaningful impact in everything we do. 
-            Our diverse team brings together a wealth of knowledge, skills, and perspectives.
-          </p>
-        </div>*/}
-        <div className="relative z-10 text-white pt-20 bg-dark-blue"> {/* Apply the new background color class */}
-          <div className="flex flex-col items-center text-center text-purple-500 font-extrabold text-4xl px-4">
+
+        {/* Domains Section - Added bg-dark-blue */}
+        <div className="relative z-10 text-white bg-dark-blue">
+          <div className="flex flex-col items-center text-center text-purple-500 fontdiner-swanky-regular text-4xl px-4 pt-20">
             OUR DOMAINS
           </div>
           <div className="flex flex-wrap justify-center font-semibold">
@@ -132,17 +134,19 @@ export default function Page() {
             ))}
           </div>
         </div>
+       
         <div className="relative z-10 text-white pt-20 bg-dark-blue"> {/* Apply the new background color class */}
           <Gallery /> {/* Add Gallery component */}
         </div>
-        <div className="relative z-10 text-white pt-20 bg-dark-blue">
-  <div className="flex flex-col items-center text-center text-purple-500 font-extrabold text-4xl px-4 mb-10">
-    CO-ORDINATORS
+        <div className="relative z-10 text-white pt-20 bg-dark-blue" data-aos="fade-up">
+  <div className="flex flex-col items-center text-center mb-10" data-aos="fade-up">
+    <h2 className="text-4xl fontdiner-swanky-regular text-purple-500">CO-ORDINATORS</h2>
   </div>
-  <div className="flex flex-wrap justify-center max-w-7xl mx-auto px-4">
+  <div className="max-w-6xl mx-auto px-4 " >
     {coordinators.map((coordinator, index) => (
       <CoordinatorCard
         key={index}
+        index={index}
         name={coordinator.name}
         role={coordinator.role}
         image={coordinator.image}

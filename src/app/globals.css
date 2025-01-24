@@ -11,12 +11,7 @@ body {
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
-.coordinator-card {
-  width: 100%;
-  margin: 16px 0;
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-}
+
 
 .coordinator-card:hover {
   border-color: rgb(144 97 249); /* Purple border on hover */
@@ -35,7 +30,9 @@ body {
   position: relative;
   overflow: hidden;
 }
-
+.gallery-container{
+  background-color: rgb(0, 0, 2);
+}
 .gallery-container img {
   transition: transform 0.5s, border 0.5s;
 }
@@ -211,4 +208,236 @@ body {
 
 .spotlight-card:hover {
   animation: decayCard 0.5s ease-out, spotlightCard 0.5s ease-out forwards;
+}
+.coordinator-card {
+  width: 100%;
+  margin: 0 0;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  background-color: transparent;
+}
+.coordinator-card:hover {
+  border-color: rgb(144 97 249); /* Purple border on hover */
+}
+
+.coordinator-card.zigzag-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.coordinator-card.zigzag-right {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.coordinator-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+.coordinator-card .text-content {
+  flex: 1;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E1E1E; /* Dark background for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9061F9; /* Purple color for the thumb */
+  border-radius: 6px;
+  border: 3px solid #1E1E1E; /* Padding around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6C2BD9; /* Darker purple on hover */
+}
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9061F9 #1E1E1E;
+}
+
+/* Navbar styles */
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 40;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: transparent;
+}
+
+.fixed button {
+  background: transparent;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  transition: transform 0.3s ease-in-out;
+
+}
+.fixed button:hover {
+  background: #4B5563; /* Gray-700 */
+  transform: scale(1.1);
+}
+
+.fixed button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5); /* Blue-300 */
+}
+
+.navbar-animation{
+  animation: fadeIn 1s ease-out forwards;
+  padding-right: 5%;
+  display: flexbox;
+  height: 100%;
+  width: 100%;
+
+}
+.fixed svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.fixed .logo {
+  display: flex;
+  align-items: center;
+}
+
+.fixed .logo img {
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+
+.fixed .logo span {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* Drawer styles */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  height: 100vh;
+  padding: 1.5rem;
+  overflow-y: auto;
+  background: #000000;
+  color: #FFFFFF;
+  transition: transform 0.3s ease-out;
+}
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer.closed {
+  transform: translateX(-100%);
+}
+
+.drawer .gradient-text {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #40ffaa, #4079ff, #40ffaa, #4079ff, #40ffaa);
+  background-size: 200% 200%;
+  animation: gradient-animation 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.drawer h5 {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #D1D5DB; /* Gray-300 */
+}
+
+.drawer button.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: #9CA3AF; /* Gray-400 */
+  background: transparent;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.drawer button.close:hover {
+  background: #4B5563; /* Gray-700 */
+  color: #F3F4F6; /* Gray-100 */
+  transform: rotate(90deg);
+}
+
+.drawer nav {
+  margin-top: 2rem;
+}
+
+.drawer nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.drawer nav ul li {
+  list-style: none;
+}
+.drawer nav ul li button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: background 0.3s ease-in-out;
+}
+
+.drawer nav ul li button.active {
+  background: #4B5563; /* Gray-700 */
+  color: #FFFFFF;
+}
+.drawer nav ul li button:hover {
+  background: #4B5563; /* Gray-700 */
+}
+
+.drawer nav ul li button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.drawer nav ul li button .gradient-text {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

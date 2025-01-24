@@ -20,25 +20,10 @@ const images = [
 const Gallery = () => {
   return (
     <div className="gallery-container py-20 bg-[#1E1E1E] text-white">
-      <h2 className="text-4xl font-black text-center text-purple-500 mb-10">Gallery</h2>
+      <h2 className="text-4xl fontdiner-swanky-regular text-center text-purple-500 mb-10">Gallery</h2>
 
       {/* First Row */}
-      <div className="flex justify-center gap-6 mb-6">
-        {[0, 1, 2].map((index) => (
-          <div
-            key={index}
-            className={`relative group overflow-hidden rounded-lg shadow-lg w-[350px] h-[230px] ${[1].includes(index) ? 'border-4 border-purple-500' : ''}`}
-          >
-            <Image
-              src={images[index]}
-              alt={`Gallery Image ${index + 1}`}
-              width={350}
-              height={230}
-              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-        ))}
-      </div>
+  
 
       {/* Second Row */}
       <div className="flex justify-center gap-6 mb-6">
