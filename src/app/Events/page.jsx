@@ -89,7 +89,7 @@ const Events = () => {
       <div className="container mx-auto py-8 px-4">
         {/* Page Title */}
         <h1
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-24 font-fontdiner bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-24 fontdiner-swanky-regular bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title"
           data-aos="fade-down"
         >
           Previous Events

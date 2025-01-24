@@ -60,12 +60,12 @@ const TeamSection = () => {
   );
 
   return (
-    <section className=" bg-[url('/6385146.jpg')] "
+    <div className=" bg-[url('/6385146.jpg')] "
     style={{
       backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/6385146.jpg')`,
     }}>
       <div className="">
-      <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-24 font-fontdiner bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title">Meet Our Team</h1>
+      <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-24 fontdiner-swanky-regular bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title">Meet Our Team</h1>
       </div>
 
       {renderTeamSection("Final Year Members", finalYearMembers)}
@@ -73,7 +73,7 @@ const TeamSection = () => {
       {renderTeamSection("Third Year Members", thirdYearMembers)}
 
       {renderTeamSection("Second Year Members", secondYearMembers)}
-    </section>
+    </div>
   );
 };
 

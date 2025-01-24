@@ -70,7 +70,7 @@ const ContactPage = () => {
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Side */}
           <div className="space-y-6">
-            <h1 className="text-3xl sm:text-4xl font-bold">Contact Us</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold ">Contact Us</h1>
             <p className="text-gray-400 text-sm sm:text-base">
               We are tem.exe, the CSE Department Club, always here to stay connected with you! Feel free to reach out for any questions, ideas, or feedback. We're ready to help!
             </p>
