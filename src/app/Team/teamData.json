@@ -457,7 +457,7 @@
         "linkedin": "https://www.linkedin.com/in/anjali-kumari-705227295",
         "name": "Anjali",
         "position": "Executive Member",
-        "tagline": "Set t=0.",
+        "tagline": "One Pixel at a Time",
         "year": 2
     },
     {
@@ -477,7 +477,7 @@
         "linkedin": "https://www.linkedin.com/in/devkriti-sharma-333932291/",
         "name": "Devkriti Sharma ",
         "position": "Executive Member",
-        "tagline": ".",
+        "tagline": "Loops to execute before I break",
         "year": 2
     },
     {
@@ -657,7 +657,7 @@
         "linkedin": "https://www.linkedin.com/in/utkarsh-gupta-5aa661261",
         "name": "Utkarsh",
         "position": "Executive Member",
-        "tagline": "Making Experiences diary of 60  years",
+        "tagline": "Capturing 60 Years of Unforgettable Moments",
         "year": 2
     },
     {
@@ -761,6 +761,16 @@
         "year": 1
     },
     {
+        "github": "https://github.com/Devcodes-beta",
+        "imageURL": "https://res.cloudinary.com/dhidmdvtx/image/upload/v1737746887/20241224_163743_-_DEVANSH_SINGH_1_km3dyd.jpg",
+        "key": 25,
+        "linkedin": "https://www.linkedin.com/in/devansh-singh-54bb2b312?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        "name": "Devansh Singh",
+        "position": "Volunteer",
+        "tagline": "Code, Create and Craft",
+        "year": 1
+    },
+    {
         "github": "https://github.com/keshawx",
         "imageURL": "https://res.cloudinary.com/dyxhzciux/image/upload/v1737659907/IMG-20250123-WA0001_-_KESHAV_SONI_ukbhpw.jpg",
         "key": 11,
@@ -791,8 +801,18 @@
         "year": 1
     },
     {
+        "github": "https://github.com/Parisha19",
+        "imageURL": "https://res.cloudinary.com/dyxhzciux/image/upload/v1737712194/IMG-20250124-WA0033_nmlp0v.jpg",
+        "key": 26,
+        "linkedin": "https://www.linkedin.com/in/parisha-chauhan-7b16b5346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        "name": "Parisha  Chauhan",
+        "position": "Volunteer",
+        "tagline": "Code.Create.Conquer.",
+        "year": 1
+    },
+    {
         "github": "https://github.com/Pikanshi1",
-        "imageURL": "https://res.cloudinary.com/dyxhzciux/image/upload/v1737688387/IMG-20250124-WA0000_f0mzgv.jpg",
+        "imageURL": "https://res.cloudinary.com/dhidmdvtx/image/upload/v1737777958/IMG_6091_dujnqg.jpg",
         "key": 14,
         "linkedin": "https://www.linkedin.com/in/pikanshi-mehta-055188328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         "name": "Pikanshi",
@@ -871,6 +891,16 @@
         "year": 1
     },
     {
+        "github": "https://github.com/Shlok1729",
+        "imageURL": "https://res.cloudinary.com/dyxhzciux/image/upload/v1737693552/SAVE_20250124_100508_rusnff.jpg",
+        "key": 24,
+        "linkedin": "http://www.linkedin.com/in/shlok-goyal-225395262",
+        "name": "Shlok Goyal",
+        "position": "Volunteer",
+        "tagline": "Ridiculously Amusing...Amusingly Ridiculous",
+        "year": 1
+    },
+    {
         "github": "https://github.com/utkarsh684?tab=overview&from=2024-12-01&to=2024-12-31",
         "imageURL": "https://res.cloudinary.com/dyxhzciux/image/upload/v1737711948/IMG-20250124-WA0032_tlveco.jpg",
         "key": 22,
@@ -888,36 +918,6 @@
         "name": "Vansh Vashist",
         "position": "Volunteer",
         "tagline": "If you can't find a way, create one!",
-        "year": 1
-    },
-    {
-        "github": "https://github.com/Shlok1729",
-        "imageURL": "https://res.cloudinary.com/dyxhzciux/image/upload/v1737693552/SAVE_20250124_100508_rusnff.jpg",
-        "key": 24,
-        "linkedin": "http://www.linkedin.com/in/shlok-goyal-225395262",
-        "name": "Shlok Goyal",
-        "position": "Volunteer",
-        "tagline": "Ridiculously Amusing...Amusingly Ridiculous",
-        "year": 1
-    },
-    {
-        "github": "https://github.com/Devcodes-beta",
-        "imageURL": "https://res.cloudinary.com/dhidmdvtx/image/upload/v1737746887/20241224_163743_-_DEVANSH_SINGH_1_km3dyd.jpg",
-        "key": 25,
-        "linkedin": "https://www.linkedin.com/in/devansh-singh-54bb2b312?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        "name": "Devansh Singh",
-        "position": "Volunteer",
-        "tagline": "Code, Create and Craft",
-        "year": 1
-    },
-    {
-        "github": "https://github.com/Parisha19",
-        "imageURL": "https://res.cloudinary.com/dyxhzciux/image/upload/v1737712194/IMG-20250124-WA0033_nmlp0v.jpg",
-        "key": 26,
-        "linkedin": "https://www.linkedin.com/in/parisha-chauhan-7b16b5346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-        "name": "Parisha  Chauhan",
-        "position": "Volunteer",
-        "tagline": "Code.Create.Conquer.",
         "year": 1
     }
 ]

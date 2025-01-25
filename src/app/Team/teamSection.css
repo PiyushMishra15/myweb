@@ -36,21 +36,8 @@ body {
     gap: 20px;
 }
 
-.team-card {
-    background: linear-gradient(145deg, #d3d3d3, #a9a9a9);
 
-    margin: 10px;
-    margin-bottom: 50px;
-    width: 300px;
-    padding: 20px;
-    line-height: 20px;
-    color: black;
-    position: relative;
-    border-radius: 12px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    text-align: center;
-    transition: border 0.3s ease, transform 0.3s ease;
-}
+
 
 .team-card:hover {
     transform: scale(1.05);
@@ -76,6 +63,54 @@ body {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    /* Align content vertically */
+    align-items: center;
+    /* Center content horizontally */
+    justify-content: flex-start;
+    /* Keep the content aligned from the top */
+    background: linear-gradient(145deg, #d3d3d3, #a9a9a9);
+    margin: 10px;
+    margin-bottom: 50px;
+    width: 300px;
+    padding: 20px;
+    line-height: 20px;
+    color: black;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    transition: border 0.3s ease, transform 0.3s ease;
+}
+
+.profile-img-container {
+    width: 250px;
+    /* Fixed width for the container */
+    height: 250px;
+    /* Fixed height for the container */
+    display: flex;
+    align-items: center;
+    /* Center the image vertically */
+    justify-content: center;
+    /* Center the image horizontally */
+    margin-bottom: 20px;
+    /* Add spacing below the image */
+}
+
+.profile-img {
+    width: 100%;
+    /* Fill the container */
+    height: 100%;
+    /* Fill the container */
+    object-fit: cover;
+    /* Maintain aspect ratio and fill */
+    border-radius: 5%;
+    /* Make the image circular */
+}
+
 
 .team-card .team_img {
     position: absolute;
@@ -145,6 +180,6 @@ body {
     }
 }
 
-.h1{
+.h1 {
     margin-top: 28px;
 }
