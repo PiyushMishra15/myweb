@@ -46,7 +46,7 @@ const coordinators = [
     name: 'TP Sharma',
     role: 'Faculty Incharge',
     image: '/tpsharma.png',
-    linkedin: 'https://www.linkedin.com/in/tp-sharma',
+    linkedin: 'https://www.linkedin.com/in/tp-sharma-253a0039/?originalSubdomain=in',
   },
   {
     name: 'Somendra Aggarwal',
@@ -96,14 +96,17 @@ export default function Page() {
         {/* Video Section */}
         <div className="relative z-10">
   {/* Container with gradient background */}
-  <div className="flex items-center justify-center h-screen overflow-hidden bg-gradient-to-b from-black via-blue-900 to-black">
+  <div className="flex items-center justify-center h-screen overflow-hidden bg-gradient-to-b from-black  to-black">
     {/* Video */}
     <video
       className="absolute object-contain w-full h-auto max-w-none sm:max-w-[90%] md:max-w-[70%] lg:max-w-full"
       src="/main.mov"
       autoPlay
       muted
+<<<<<<< HEAD
     
+=======
+>>>>>>> a51b85ead144d2b7e3ff43015226303063cc989d
       title="Your Video Title"
     />
             <div className='absolute inset-0 flex items-center justify-center'>
@@ -142,7 +145,7 @@ export default function Page() {
   <div className="flex flex-col items-center text-center mb-10" data-aos="fade-up">
     <h2 className="text-4xl fontdiner-swanky-regular text-purple-500">CO-ORDINATORS</h2>
   </div>
-  <div className="max-w-6xl mx-auto px-4 " >
+  <div className="max-w-6xl mx-auto px-4 mr-20 " >
     {coordinators.map((coordinator, index) => (
       <CoordinatorCard
         key={index}
