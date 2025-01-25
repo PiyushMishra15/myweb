@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import Lottie from "lottie-react";
-import animationData from '../navbar2.json'; // Correct path to the JSON file
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +47,7 @@ export default function Navbar() {
       {/* Modal for Navigation Links */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-100 backdrop-blur-sm">
-          <div className="bg-transparent text-white rounded-lg p-8 max-w-3xl w-full flex justify-center items-center ">
+          <div className="bg-transparent text-white rounded-lg p-8 max-w-3xl w-full flex justify-center items-center">
             <div className="flex-1">
               <button
                 onClick={toggleDrawer}
@@ -71,33 +69,36 @@ export default function Navbar() {
                   />
                 </svg>
               </button>
-              <nav className="mt-20 ml-52 fontdiner-swanky-regular  ">
-                <ul className="space-y-4 text-center  ">
+              <nav className="mt-20 ml-52 fontdiner-swanky-regular">
+                <ul className="space-y-4 text-center">
                   {[
-                    { href: "/", label: "Home" },
-                    { href: "/AboutUs", label: "About" },
-                    { href: "/Projects", label: "Projects" },
-                    { href: "/Workshops", label: "Workshops" },
-                    { href: "/Events", label: "Events" },
-                    { href: "/Team", label: "Our Team" },
-                    { href: "/ContactUs", label: "Contact Us" },
-                    { href: "/Faqs", label: "FAQs" },
+                    { href: "/", label: "Home", icon: "/icons/home.png" },
+                    { href: "/AboutUs", label: "About", icon: "/icons/about.png" },
+                    { href: "/Projects", label: "Projects", icon: "/icons/projects.png" },
+                    { href: "/Workshops", label: "Workshops", icon: "/icons/workshop.png" },
+                    { href: "/Events", label: "Events", icon: "/icons/event.png" },
+                    { href: "/Team", label: "Our Team", icon: "/icons/team.png" },
+                    { href: "/ContactUs", label: "Contact Us", icon: "/icons/contact.png" },
+                    { href: "/Faqs", label: "FAQs", icon: "/icons/faq.png" },
                   ].map((link) => (
                     <li key={link.href}>
                       <button
                         onClick={() => handleNavigation(link.href)}
-                        className="w-full text-center px-4 py-2 rounded-lg text-4xl font-medium transition hover:bg-gray-600 text-white bg-transparent space-evenly"
+                        className="w-full flex items-center text-left px-4 py-2 rounded-lg text-4xl font-medium transition hover:bg-gray-600 text-white bg-transparent space-evenly"
                       >
+                        {/* Icon */}
+                        <img
+                          src={link.icon}
+                          alt={`${link.label} icon`}
+                          className="w-8 h-8 mr-4"
+                        />
+                        {/* Label */}
                         {link.label}
                       </button>
                     </li>
                   ))}
                 </ul>
               </nav>
-            </div>
-            <div className="navbar-animation">
-          
-
             </div>
           </div>
         </div>
