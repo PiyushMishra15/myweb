@@ -103,7 +103,7 @@ export default function Page() {
       src="/main.mov"
       autoPlay
       muted
-      loop
+    
       title="Your Video Title"
     />
             <div className='absolute inset-0 flex items-center justify-center'>
