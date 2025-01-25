@@ -1,4 +1,4 @@
-import Squares from '../../Squares/Squares';
+
 import DomainCard from '../../src/components/DomainCard';
 import Gallery from '../../src/components/Gallery';
 

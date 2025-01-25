@@ -61,8 +61,8 @@ const Projects = () => {
       }}
     >
       <div className="container mx-auto py-16 px-6">
-        <h1
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-16 font-poppins text-blue-300 drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title"
+      <h1
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-16 fontdiner-swanky-regular bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title"
           data-aos="fade-down"
         >
           Our Projects

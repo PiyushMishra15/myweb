@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react";
-import Squares from "../../../Squares/Squares"; // Ensure you have the correct library installed
 
 const AboutUs = () => {
   return (

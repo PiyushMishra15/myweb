@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Squares from "../../../Squares/Squares";
 
 export default function App() {
   const [collapse1, setCollapse1] = useState(false);
