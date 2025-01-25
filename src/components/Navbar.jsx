@@ -46,7 +46,7 @@ export default function Navbar() {
 
       {/* Modal for Navigation Links */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-100 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex  bg-transparent backdrop-blur-sm">
           <div className="bg-transparent text-white rounded-lg p-8 max-w-3xl w-full flex justify-center items-center">
             <div className="flex-1">
               <button
@@ -69,7 +69,7 @@ export default function Navbar() {
                   />
                 </svg>
               </button>
-              <nav className="mt-20 ml-52 fontdiner-swanky-regular">
+              <nav className="mt-20  fontdiner-swanky-regular">
                 <ul className="space-y-4 text-center">
                   {[
                     { href: "/", label: "Home", icon: "/icons/home.png" },
@@ -84,7 +84,7 @@ export default function Navbar() {
                     <li key={link.href}>
                       <button
                         onClick={() => handleNavigation(link.href)}
-                        className="w-full flex items-center text-left px-4 py-2 rounded-lg text-4xl font-medium transition hover:bg-gray-600 text-white bg-transparent space-evenly"
+                        className="w-full flex flex-auto items-center text-left px-4 py-2 rounded-lg text-4xl font-medium transition hover:bg-purple-500 text-white bg-transparent "
                       >
                         {/* Icon */}
                         <img
