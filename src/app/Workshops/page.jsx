@@ -1,5 +1,5 @@
-"use client"
-import React, { useEffect, useRef, useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Orbitron, Playfair_Display, Montserrat, Fontdiner_Swanky } from "next/font/google";
 import AOS from "aos";
@@ -32,6 +32,7 @@ const montserrat = Montserrat({
 
 const Workshops = () => {
   const [expandedWorkshopId, setExpandedWorkshopId] = useState(null);
+  const [isClient, setIsClient] = useState(false); // State to track if it's on the client side
 
   const workshops = [
     {
@@ -80,35 +81,41 @@ const Workshops = () => {
   const sortedYears = Object.keys(groupedWorkshops).sort((a, b) => b - a); // Sort by year descending
 
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.1,
-    };
+    if (typeof window !== "undefined") {
+      // Mark that we are on the client side
+      setIsClient(true);
 
-    const handleIntersect = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate-on-scroll");
-          observer.unobserve(entry.target);
-        }
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const handleIntersect = (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-on-scroll");
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(handleIntersect, observerOptions);
+
+      document.querySelectorAll(".workshop-item").forEach((el) => {
+        observer.observe(el);
       });
-    };
 
-    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+      AOS.init({
+        duration: 1000,
+        offset: 100,
+        easing: "ease-in-out",
+        once: false,
+      });
 
-    document.querySelectorAll(".workshop-item").forEach((el) => {
-      observer.observe(el);
-    });
-
-    AOS.init({
-      duration: 1000,
-      offset: 100,
-      easing: "ease-in-out",
-      once: false,
-    });
-
-    return () => observer.disconnect();
+      return () => observer.disconnect();
+    }
   }, []);
 
   const toggleExpand = (workshopId) => {
@@ -165,7 +172,7 @@ const Workshops = () => {
                       : workshop.description.slice(0, 160) + "..."}
                     <button
                       onClick={() => toggleExpand(workshop.id)}
-                      className=" font-semibold ml-2 focus:outline-none bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-blue-700 to-blue-900 animate-gradient animate-title"
+                      className="font-semibold ml-2 focus:outline-none bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-blue-700 to-blue-900 animate-gradient animate-title"
                     >
                       {isExpanded(workshop.id) ? "Read Less" : "Read More"}
                     </button>
