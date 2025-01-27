@@ -17,7 +17,7 @@ const projects = [
     id: 2,
     title: "Certifica Authentify",
     description:
-      "Certifica_Authentify aims to create a decentralized system that aims to eradicate the problem of document forging, which involves submitting counterfeit educational and other certificates, by proposing a reliable method to store and authenticate the certificates in real-time to minimize the latency in the current authentication system and at the same time facilitating corrections in the certificates without physically reaching out to the concerned organization.",
+      "Certifica_Authentify aims to create a decentralized system that aims to eradicate the problem of  forging, which involves submitting counterfeit educational and other certificates, by proposing a reliable method to store and authenticate the certificates in real-time to minimize the latency in the current authentication system and at the same time facilitating corrections in the certificates without physically reaching out to the concerned organization.",
     techStack: ["javascript", "mongodb", "solidity", "node.js"],
     thumbnailUrl:
       "https://img.freepik.com/free-vector/iso-9001-certification-checks_23-2148681367.jpg?w=996&t=st=1712548003~exp=1712548603~hmac=ede52500c6cfd189c032387c79242f3204ae983a66693e2b3a88716a04dfe504",

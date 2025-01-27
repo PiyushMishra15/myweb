@@ -81,7 +81,7 @@ const Workshops = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      // Now we are on the client side, and we can safely use document
+      
       setIsClient(true);
 
       // Initialize AOS for scroll animations
