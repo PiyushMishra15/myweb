@@ -1,8 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Orbitron, Playfair_Display, Montserrat, Fontdiner_Swanky } from "next/font/google";
-import AOS from "aos";
+import dynamic from "next/dynamic"; // for dynamic imports
 import "aos/dist/aos.css";
+
+// Dynamically import AOS only on the client side
+const AOS = dynamic(() => import("aos"), { ssr: false });
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -81,8 +84,7 @@ const Workshops = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      
-      setIsClient(true);
+      setIsClient(true); // Mark client-side rendering
 
       // Initialize AOS for scroll animations
       AOS.init({
