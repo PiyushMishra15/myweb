@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import Lottie from 'react-lottie';
-import animationData from '../../src/ArVr.json'; // Correct path to the JSON file
+import animationData from '../../public/ArVr.json'// Correct path to the JSON file
 
 const ArVrAnimation = () => {
   const defaultOptions = {

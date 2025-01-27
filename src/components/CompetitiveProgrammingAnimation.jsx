@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Lottie from 'react-lottie';
-import animationData from '../../src/CompetitiveProgramiing.json'; // Correct path to the JSON file
+import animationData from '../../public/CompetitiveProgramiing.json' // Correct path to the JSON file
 
 const CompetitiveProgrammingAnimation = () => {
   const defaultOptions = {

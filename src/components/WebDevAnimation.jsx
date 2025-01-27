@@ -2,7 +2,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 
 const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
-import animationData from '../../src/webdev.json'; // Correct path to the JSON file
+import animationData from '../../public/webdev.json' // Correct path to the JSON file
 
 const WebDevAnimation = () => {
   const defaultOptions = {

@@ -2,7 +2,7 @@
 // src/components/VideoEditingAnimation.jsx
 import React from 'react';
 import Lottie from 'react-lottie';
-import animationData from '../videoEditing.json'; // Correct path to the JSON file
+import animationData from '../../public/videoEditing.json' // Correct path to the JSON file
 
 const VideoEditingAnimation = () => {
   const defaultOptions = {

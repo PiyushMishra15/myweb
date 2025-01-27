@@ -1,7 +1,7 @@
 'use cleint';
 import React from 'react';
 import Lottie from 'react-lottie';
-import animationData from '../../src/machineLearning.json'; // Correct path to the JSON file
+import animationData from '../../public/machineLearning.json'// Correct path to the JSON file
 
 const MachineLearningAnimation = () => {
   const defaultOptions = {

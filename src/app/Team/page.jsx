@@ -1,13 +1,13 @@
 'use client';
 
 import React from "react";
-import "./TeamSection.css";
-import teamData from "./teamData.json";
+import "../../../styles/teamSection.css";
+import teamData from '../../components/teamData.json'
 
 const githubIcon = "/icons/github.png";
 const linkedinIcon = "/icons/linkedin.png";
 
-const TeamSection = () => {
+const Team = () => {
   const finalYearMembers = teamData.filter(
     (member) => member && typeof member.year === "number" && member.year === 4
   );
@@ -82,4 +82,4 @@ const TeamSection = () => {
   );
 };
 
-export default TeamSection;
+export default Team;

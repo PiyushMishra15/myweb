@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import Lottie from 'react-lottie';
-import animationData from '../../src/GraphicDesign.json'; // Correct path to the JSON file
+import animationData from '../../public/GraphicDesign.json' // Correct path to the JSON file
 
 const GraphicDesignAnimation = () => {
   const defaultOptions = {
