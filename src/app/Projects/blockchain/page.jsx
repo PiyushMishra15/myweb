@@ -1,7 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import the AOS CSS
+
+
 
 const projects = [
   {
@@ -44,13 +46,14 @@ const projects = [
 
 const Projects = () => {
   useEffect(() => {
+    if (typeof window !== "undefined") {
     AOS.init({
-      duration: 1200,
-      offset: 100,
-      easing: "ease-out-quint",
-      once: false,
-      delay: 100,
-    });
+      duration: 1000, // Default smooth animations
+      offset: 100, // Adjust the trigger point
+      easing: "ease-out-quint", // A smoother easing effect
+      once: false, // Animation occurs only once
+      delay: 100, // Add slight delay for each element for staggered effect
+    });}
   }, []);
 
   return (
