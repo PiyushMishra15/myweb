@@ -84,36 +84,13 @@ const Workshops = () => {
       // Now we are on the client side, and we can safely use document
       setIsClient(true);
 
-      // Intersection Observer for scroll animations
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      };
-
-      const handleIntersect = (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-on-scroll");
-            observer.unobserve(entry.target);
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(handleIntersect, observerOptions);
-
-      document.querySelectorAll(".workshop-item").forEach((el) => {
-        observer.observe(el);
-      });
-
+      // Initialize AOS for scroll animations
       AOS.init({
         duration: 1000,
         offset: 100,
         easing: "ease-in-out",
         once: false,
       });
-
-      return () => observer.disconnect();
     }
   }, []);
 
@@ -149,7 +126,7 @@ const Workshops = () => {
               <div
                 key={workshop.id}
                 data-aos="fade-up"
-                className="flex flex-col md:flex-row-reverse items-center md:items-start gap-12 mb-32 transition-all duration-300 ease-in-out hover:scale-105 workshop-item opacity-0"
+                className="flex flex-col md:flex-row-reverse items-center md:items-start gap-12 mb-32 transition-all duration-300 ease-in-out hover:scale-105 opacity-0"
               >
                 {/* Right Side: Poster Image */}
                 <div className="w-full sm:w-3/4 md:w-1/3 md:ml-12" data-aos="zoom-out-left">
@@ -176,7 +153,7 @@ const Workshops = () => {
                       {isExpanded(workshop.id) ? "Read Less" : "Read More"}
                     </button>
                   </p>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-playair">
+                  <p className="text-xl sm:text-2xl md:text-3xl font-playfair">
                     <span className="font-medium text-gray-400">Date:</span>{" "}
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title ">{new Date(workshop.start_date).toLocaleDateString("en-US", {
                       year: "numeric",
