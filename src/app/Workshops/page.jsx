@@ -81,7 +81,7 @@ const Workshops = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      // Mark that we are on the client side
+      // Now we are on the client side, and we can safely use document
       setIsClient(true);
 
       // Intersection Observer for scroll animations
