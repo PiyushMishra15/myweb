@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import { Orbitron, Playfair_Display, Montserrat, Fontdiner_Swanky } from "next/font/google";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -141,7 +140,7 @@ const Workshops = () => {
           Workshops
         </h1>
 
-        {sortedYears.map((year, index) => (
+        {isClient && sortedYears.map((year, index) => (
           <div key={year} className="mb-24 animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-16 text-center font-playfair text-gray-200 glow animate-pulse">
               {Number(year) - 1} - {year}
@@ -169,7 +168,7 @@ const Workshops = () => {
                   <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-4 font-montserrat md:w-2/3">
                     {isExpanded(workshop.id)
                       ? workshop.description
-                      : workshop.description.slice(0, 160) + "..."}
+                      : workshop.description.slice(0, 160) + "..." }
                     <button
                       onClick={() => toggleExpand(workshop.id)}
                       className="font-semibold ml-2 focus:outline-none bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-blue-700 to-blue-900 animate-gradient animate-title"
@@ -179,24 +178,17 @@ const Workshops = () => {
                   </p>
                   <p className="text-xl sm:text-2xl md:text-3xl font-playair">
                     <span className="font-medium text-gray-400">Date:</span>{" "}
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title ">
-                      {new Date(workshop.start_date)
-                        .toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })
-                        .replace(/,/g, " ")}
-                    </span>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-gradient animate-title ">{new Date(workshop.start_date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    }).replace(/,/g, " ")}</span>
                   </p>
                 </div>
               </div>
             ))}
           </div>
         ))}
-
-        {/* Horizontal line before footer */}
-        <hr className="border-t-2 border-gray-300 my-1" data-aos="flip-in" />
       </div>
     </div>
   );
