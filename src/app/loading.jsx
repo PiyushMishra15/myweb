@@ -1,6 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Lottie from "lottie-react";
+import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const AnimationComponent = () => {
   const [animationData, setAnimationData] = useState(null);
@@ -15,7 +17,9 @@ const AnimationComponent = () => {
 
   return (
     <div className="w-full h-screen bg-black flex items-center justify-center">
-      <Lottie animationData={animationData} className="w-full h-full" />
+      {animationData && (
+        <Lottie animationData={animationData} className="w-full h-full" />
+      )}
     </div>
   );
 };
