@@ -1,17 +1,27 @@
-import React from 'react';
-import dynamic from 'next/dynamic';
-
-const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
-import animationData from '../../public/webdev.json' // Correct path to the JSON file
+"use client"
+import React, { useState, useEffect } from 'react';
+import Lottie from 'react-lottie';
+import animationData from '../../public/webdev.json'; // Correct path to the JSON file
 
 const WebDevAnimation = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  // Check if we are running on the client (window or document is available)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
+
+  if (!isClient) return null; // Render nothing during SSR or render a loader
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
     animationData: animationData,
     rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
+      preserveAspectRatio: 'xMidYMid slice',
+    },
   };
 
   return (

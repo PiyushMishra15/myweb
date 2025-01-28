@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import Link from 'next/link';
 import Navbar from './Navbar'; // Import Navbar component
 
 function Header() {
