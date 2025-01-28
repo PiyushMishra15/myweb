@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-export default function App() {
+export default function Faqs() {
   const [collapse1, setCollapse1] = useState(false);
   const [collapse2, setCollapse2] = useState(false);
   const [collapse3, setCollapse3] = useState(false);

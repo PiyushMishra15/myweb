@@ -11,7 +11,7 @@ import {
   BsTwitter,
 } from "react-icons/bs";
 
-const ContactPage = () => {
+const ContactUs = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -170,4 +170,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default ContactUs;

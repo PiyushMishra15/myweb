@@ -40,7 +40,7 @@ export default function CompletePage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/Domains" className="hover:underline text-gray-400 hover:text-white">
+                  <Link href="#" className="hover:underline text-gray-400 hover:text-white">
                     Domains
                   </Link>
                 </li>
