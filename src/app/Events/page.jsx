@@ -1,11 +1,13 @@
 "use client"
-import React, { useEffect } from "react";
+import React, { useEffect,useState} from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the AOS CSS
 
 
 
 const Events = () => {
+  const [isClient, setIsClient] = useState(false);
+  
   const events = [
     {
       id: 1,
@@ -67,21 +69,27 @@ const Events = () => {
   const groupedEvents = groupEventsByYear();
 
     useEffect(() => {
-      
+      if (typeof window !== "undefined") {
+        setIsClient(true);
       AOS.init({
         duration: 1000, // Default smooth animations
         offset: 100, // Adjust the trigger point
         easing: "ease-out-quint", // A smoother easing effect
         once: false, // Animation occurs only once
         delay: 100, // Add slight delay for each element for staggered effect
-      });
+      });}
     }, []);
+   
+
+ 
+
 
   // Check if the event has ended
   const hasEventEnded = (endDate) => {
     const currentDate = new Date();
     return new Date(endDate) < currentDate;
   };
+  if (!isClient) return null;
 
   return (
     <div
