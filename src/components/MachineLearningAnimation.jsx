@@ -1,8 +1,9 @@
 'use cleint';
 import React from 'react';
-import Lottie from 'react-lottie';
-import animationData from '../../public/machineLearning.json'// Correct path to the JSON file
+import dynamic from "next/dynamic";
 
+import animationData from '../../public/machineLearning.json'// Correct path to the JSON file
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 const MachineLearningAnimation = () => {
   const defaultOptions = {
     loop: true,

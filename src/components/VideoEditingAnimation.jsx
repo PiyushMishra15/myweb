@@ -1,9 +1,11 @@
 'use client'
 // src/components/VideoEditingAnimation.jsx
 import React from 'react';
-import Lottie from 'react-lottie';
-import animationData from '../../public/videoEditing.json' // Correct path to the JSON file
+import dynamic from "next/dynamic";
 
+
+import animationData from '../../public/videoEditing.json' // Correct path to the JSON file
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 const VideoEditingAnimation = () => {
   const defaultOptions = {
     loop: true,

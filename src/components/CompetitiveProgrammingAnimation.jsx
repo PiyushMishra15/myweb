@@ -1,7 +1,9 @@
 'use client';
 import React from 'react';
-import Lottie from 'react-lottie';
+import dynamic from "next/dynamic";
+
 import animationData from '../../public/CompetitiveProgramiing.json' // Correct path to the JSON file
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const CompetitiveProgrammingAnimation = () => {
   const defaultOptions = {
