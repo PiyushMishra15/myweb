@@ -22,14 +22,13 @@ const projects = [
 
 const Projects = () => {
    useEffect(() => {
-     if (typeof window !== "undefined") {
      AOS.init({
        duration: 1000, // Default smooth animations
        offset: 100, // Adjust the trigger point
        easing: "ease-out-quint", // A smoother easing effect
        once: false, // Animation occurs only once
        delay: 100, // Add slight delay for each element for staggered effect
-     });}
+     });
    }, []);
 
   return (

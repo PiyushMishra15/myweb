@@ -84,7 +84,6 @@ const Workshops = () => {
   const sortedYears = Object.keys(groupedWorkshops).sort((a, b) => b - a); // Sort by year descending
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
       setIsClient(true); // Mark client-side rendering
 
       // Initialize AOS for scroll animations
@@ -94,7 +93,7 @@ const Workshops = () => {
         easing: "ease-in-out",
         once: false,
       });
-    }
+    
   }, []);
 
   const toggleExpand = (workshopId) => {
